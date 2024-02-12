@@ -11,6 +11,7 @@ namespace emitterInternals
     {
     public:
         Emitter();
+        ~Emitter();
 
         void emit(std::string c);
         void emitLine(std::string c);

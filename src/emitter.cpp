@@ -10,20 +10,29 @@ Emitter::Emitter()
     code = "";
 }
 
-void Emitter::emit(std::string c)
+Emitter::~Emitter()
+{
+    cout << "-------------------------\n";
+    cout << "Emitter object destroyed.\n";
+    cout << "-------------------------\n";
+}
+
+void Emitter::emit(string c)
 {
     code += c;
 }
 
-void Emitter::emitLine(std::string c)
+void Emitter::emitLine(string c)
 {
     code += c + "\n";
 }
 
-void Emitter::write(std::string output)
+void Emitter::write(string output)
 {
     ofstream out(output);
     out << code;
     out.close();
+    cout << "--------------------------------\n";
     cout << "OutputFile written successfully.\n";
+    cout << "--------------------------------\n";
 }

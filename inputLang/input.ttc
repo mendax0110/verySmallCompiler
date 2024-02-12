@@ -1,0 +1,21 @@
+PRINT "Enter the number of terms for the Fibonacci series:"
+INPUT nums
+PRINT " "
+
+LET a = 0
+LET b = 1
+WHILE nums > 0
+    PRINT a
+    LET c = a + b
+    LET a = b
+    LET b = c
+    LET nums = nums - 1
+ENDWHILE
+
+IF nums > 0
+    PRINT "not zero"
+ELSE
+    IF nums == 0
+        PRINT "zero"
+    ENDIF
+ENDIF

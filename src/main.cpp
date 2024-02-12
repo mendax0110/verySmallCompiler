@@ -11,10 +11,10 @@ using namespace tokenInternals;
 using namespace parserInternals;
 using namespace std;
 
-const string inputFile = "input.tt";
+const string inputFile = "input.ttc";
 const string outputFile = "output.py";
-const string inputFilePath = "../inputLang/" + inputFile;
-const string outputFilePath = "../outputLang/" + outputFile;
+filesystem::path inputFilePath = "../inputLang/" + inputFile;
+filesystem::path outputFilePath = "../outputLang/" + outputFile;
 
 int main() 
 {
@@ -46,10 +46,7 @@ int main()
     Parser parser (source);
     parser.program();
     cout << "Parsing completed\n";
-    parser.end(inputFilePath);
-
-    Emitter emit;
-    emit.write(outputFilePath);
+    parser.end(outputFilePath);
     
     return 0;
 }

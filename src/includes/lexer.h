@@ -16,6 +16,7 @@ namespace lexerInternals
     {
     public:
         Lexer(std::string src);
+        ~Lexer();
         void nextChar(void);
         char peek(void) const;
         void abort(std::string message);

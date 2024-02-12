@@ -56,7 +56,9 @@ namespace tokenInternals
                                                                 {"THEN", THEN},
                                                                 {"ENDIF", ENDIF},
                                                                 {"WHILE", WHILE},
-                                                                {"ENDWHILE", ENDWHILE}};
+                                                                {"ENDWHILE", ENDWHILE},
+                                                                {"EOF", _EOF},
+                                                                {"NEWLINE", NEWLINE}};
     std::string convertString(TokenType t);
     TokenType isKeyword(const std::string &text);
 
@@ -64,6 +66,7 @@ namespace tokenInternals
     {
     public:
         Token();
+        ~Token();
         Token(TokenType t, std::string v="");
         void operator=(const Token& rhs);
         std::string value;

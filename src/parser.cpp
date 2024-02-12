@@ -8,15 +8,20 @@ using namespace lexerInternals;
 using namespace emitterInternals;
 using namespace std;
 
-const string inputFile = "input.tt";
+const string inputFile = "input.ttc";
 const string outputFile = "output.py";
-const string inputFilePath = "../inputLang/" + inputFile;
-const string outputFilePath = "../outputLang/" + outputFile;
 
 Parser::Parser(const string& source) : indent_count(0), _lexer(make_shared<Lexer>(source)), _emitter(make_shared<Emitter>())
 {
     nextToken();
     nextToken();
+}
+
+Parser::~Parser()
+{
+    cout << "------------------------\n";
+    cout << "Parser object destroyed.\n";
+    cout << "------------------------\n";
 }
 
 bool Parser::checkToken(TokenType t)
@@ -29,20 +34,19 @@ bool Parser::checkPeek(TokenType t)
     return (peekToken.type == t);
 }
 
-void Parser::abort(const std::string& message)
+void Parser::abort(const string& message)
 {
 	cout << message << "\n";
-	exit(1);
+	throw runtime_error(message);
 }
 
 bool Parser::match(TokenType t)
 {
     if (!checkToken(t))
     {
-        cout << "expect " << t << " != " << currentToken.type << "\n";
-        Parser::abort("Token doesn't match but it must match token");
+        //abort("Expected " + tokenInternals::convertString(t) + " but found " + currentToken.value);
     }
-    return true;
+    return false;
 }
 
 void Parser::nextToken()
@@ -66,14 +70,17 @@ void Parser::program()
     {
         statement();
     }
+
+    cout << "exit program\n";
+    cout << "Current token after program: " << currentToken.value << "\n";
 }
 
-void Parser::end(const std::string& output)
+void Parser::end(const string& output)
 {
 	ofstream file;
-	file.open(outputFilePath);
-	file << output;
-	file.close();
+    file.open(filesystem::path(output));
+    _emitter->write(output);
+    file.close();
 }
 
 void Parser::statement()
@@ -100,6 +107,12 @@ void Parser::statement()
 		case PASS:
 			isPass();
 			break;
+        case NEWLINE:
+            newLine();
+            break;
+        case _EOF:
+            endOfFile();
+            break;
 		default:
             runtime_error("no match in switch statement");
 			break;
@@ -161,6 +174,7 @@ void Parser::isWhile()
     indent_count--;
     nextToken();
     newLine();
+    cout << "exit isWhile\n";
 }
 
 void Parser::isIf()
@@ -180,7 +194,6 @@ void Parser::isIf()
     }
     if (checkToken(ELSE))
     {
-        emitIndentation();
         cout << "ELSE\n";
         _emitter->emit("else:\n");
         nextToken();
@@ -192,6 +205,7 @@ void Parser::isIf()
     }
     match(ENDIF);
     indent_count--;
+    //match(ENDIF);
     nextToken();
     newLine();
     cout << "exit IF\n";
@@ -206,11 +220,11 @@ void Parser::isPrint()
         emitIndentation();
         if (currentToken.type == STRING)
         {
-            _emitter->emit("print (\"" + currentToken.value + "\")\n");
+            _emitter->emit("print(\"" + currentToken.value + "\")\n");
         }
         else if (currentToken.type == NUMBER || currentToken.type == ID)
         {
-            _emitter->emit("print (" + currentToken.value + ")\n");
+            _emitter->emit("print(" + currentToken.value + ")\n");
         }
     }
     else
@@ -246,6 +260,7 @@ void Parser::comparison()
         expression();
         _emitter->emit(currentToken.value);
     }
+    cout << "exit comparison\n";
 }
 
 void Parser::expression()
@@ -259,6 +274,7 @@ void Parser::expression()
         nextToken();
         term();
     }
+    cout << "exit expression\n";
 }
 
 void Parser::term()
@@ -272,6 +288,7 @@ void Parser::term()
         nextToken();
         unary();
     }
+    cout << "exit term\n";
 }
 
 void Parser::unary()
@@ -293,13 +310,31 @@ void Parser::primary()
         cout << currentToken.value << "\n";
         _emitter->emit(currentToken.value);
     }
+    cout << "exit primary\n";
 }
 
 void Parser::newLine()
 {
+    cout << "newLine\n";
+    if (checkToken(_EOF))
+    {
+        cout << "End of program\n";
+        return;
+    }
+
+    cout << "Current token before matching NEWLINE: " << currentToken.value << " (" << currentToken.type << ")\n";
+
     match(NEWLINE);
     while (checkToken(NEWLINE))
     {
         nextToken();
     }
+    cout << "exit newLine\n";
+}
+
+void Parser::endOfFile()
+{
+    cout << "endOfFile\n";
+    match(_EOF);
+    cout << "exit endOfFile\n";
 }

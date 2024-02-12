@@ -11,6 +11,13 @@ Lexer::Lexer(string src)
 {
 }
 
+Lexer::~Lexer()
+{
+    cout << "-----------------------\n";
+    cout << "Lexer Object destroyed.\n";
+    cout << "-----------------------\n";
+}
+
 void Lexer::nextChar()
 {
     curPos += 1;
@@ -46,9 +53,9 @@ void Lexer::skipComment()
     }
 }
 
-void Lexer::abort(std::string message)
+void Lexer::abort(string message)
 {
-    std::cout << "Error: " + message + "\n";
+    cout << "Error: " + message + "\n";
     assert(0==1);
 }
 

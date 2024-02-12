@@ -18,6 +18,7 @@ namespace parserInternals
     {
     public:
         Parser(const std::string& source);
+        ~Parser();
         bool checkToken(TokenType t);
         bool checkPeek(TokenType t);
         bool match(TokenType t);
@@ -49,6 +50,7 @@ namespace parserInternals
         void term();
         void unary();
         void primary();
+        void endOfFile();
         void debug();
     };
 }

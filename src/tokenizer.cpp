@@ -1,10 +1,37 @@
 #include "../src/includes/tokenizer.h"
 
 using namespace tokenInternals;
+using namespace std;
 
-std::string tokenInternals::convertString(TokenType t)
+Token::Token()
 {
-    std::string text;
+    type = UNKNOWN;
+    value = convertString(type);
+}
+
+Token::~Token()
+{
+    cout << "-----------------------\n";
+    cout << "Token object destroyed.\n";
+    cout << "-----------------------\n";
+}
+
+Token::Token(TokenType t, string v)
+{
+    type = t;
+    if (v.length() == 0)
+    {
+        value = convertString(t);
+    }
+    else
+    {
+        value = std::move(v);
+    }
+}
+
+string tokenInternals::convertString(TokenType t)
+{
+    string text;
     switch(t)
     {
     case UNKNOWN:
@@ -93,31 +120,13 @@ std::string tokenInternals::convertString(TokenType t)
     return text;
 }
 
-TokenType tokenInternals::isKeyword(const std::string &text)
+TokenType tokenInternals::isKeyword(const string &text)
 {
-    std::unordered_map<std::string,TokenType>::const_iterator got = keywords.find (text);
-    if ( got == keywords.end() )
+    unordered_map<string,TokenType>::const_iterator got = keywords.find(text);
+    if (got == keywords.end())
         return UNKNOWN;
     else
         return got->second;
-}
-
-Token::Token()
-{
-
-}
-
-Token::Token(TokenType t, std::string v)
-{
-    type = t;
-    if(v.length() == 0)
-    {
-        value = convertString(t);
-    }
-    else
-    {
-        value = std::move(v);
-    }
 }
 
 void Token::operator=(const Token& rhs)
