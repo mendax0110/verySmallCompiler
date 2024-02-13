@@ -2,6 +2,7 @@
 #include "../src/includes/lexer.h"
 #include "../src/includes/parser.h"
 #include <iostream>
+#include <filesystem>
 #include <fstream>
 #include <sstream>
 #include <memory>

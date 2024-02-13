@@ -2,6 +2,7 @@
 #include "../src/includes/lexer.h"
 #include "../src/includes/emitter.h"
 #include <iostream>
+#include <filesystem>
 
 using namespace parserInternals;
 using namespace lexerInternals;
