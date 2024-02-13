@@ -103,6 +103,7 @@
     "limits": "cpp",
     "new": "cpp",
     "ranges": "cpp",
-    "streambuf": "cpp"
+    "streambuf": "cpp",
+    "filesystem": "cpp"
   }
 }

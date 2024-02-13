@@ -17,6 +17,7 @@ const string outputFile = "output.py";
 filesystem::path inputFilePath = "../inputLang/" + inputFile;
 filesystem::path outputFilePath = "../outputLang/" + outputFile;
 
+
 int main() 
 {
     ifstream inFile;
@@ -47,7 +48,7 @@ int main()
     Parser parser (source);
     parser.program();
     cout << "Parsing completed\n";
-    parser.end(outputFilePath);
+    parser.end(outputFilePath.string());
     
     return 0;
 }

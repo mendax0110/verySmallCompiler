@@ -45,9 +45,10 @@ bool Parser::match(TokenType t)
 {
     if (!checkToken(t))
     {
-        //abort("Expected " + tokenInternals::convertString(t) + " but found " + currentToken.value);
+        abort("Expected " + tokenInternals::convertString(t) + " but found " + currentToken.value);
+        return false;
     }
-    return false;
+    return true;
 }
 
 void Parser::nextToken()
@@ -206,7 +207,7 @@ void Parser::isIf()
     }
     match(ENDIF);
     indent_count--;
-    //match(ENDIF);
+    match(ENDIF);
     nextToken();
     newLine();
     cout << "exit IF\n";
@@ -317,25 +318,29 @@ void Parser::primary()
 void Parser::newLine()
 {
     cout << "newLine\n";
-    if (checkToken(_EOF))
-    {
-        cout << "End of program\n";
-        return;
-    }
 
     cout << "Current token before matching NEWLINE: " << currentToken.value << " (" << currentToken.type << ")\n";
 
-    match(NEWLINE);
-    while (checkToken(NEWLINE))
+    if (checkToken(NEWLINE))
     {
-        nextToken();
+        match(NEWLINE);
+        while (checkToken(NEWLINE))
+        {
+            _emitter->emit("\n");
+            nextToken();
+        }
     }
-    cout << "exit newLine\n";
+    else
+    {
+        match(currentToken.type);
+        //nextToken();
+    }
 }
 
 void Parser::endOfFile()
 {
     cout << "endOfFile\n";
     match(_EOF);
+    _emitter->emit("\n");
     cout << "exit endOfFile\n";
 }

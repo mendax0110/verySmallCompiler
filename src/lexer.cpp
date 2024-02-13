@@ -136,6 +136,11 @@ Token Lexer::getToken()
             text = source.substr(startPos, curPos - startPos + 1);
             return Token(NUMBER, text);
         }
+        else if (isEOF(_EOF))
+        {
+            text = source.substr(curPos, 1);
+            return Token(_EOF);
+        }
         return Token(UNKNOWN);
     }
 }

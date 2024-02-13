@@ -19,3 +19,11 @@ ELSE
         PRINT "zero"
     ENDIF
 ENDIF
+
+IF nums < 0
+    PRINT "negative"
+ELSE
+    IF nums == 0
+        PRINT "zero"
+    ENDIF
+ENDIF
