@@ -2,23 +2,45 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "C++ (LLDB) Launch - macOS",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/verySmallCompiler",
+      "args": [],
+      "breakpointMode": "path",
+      "console": "internalConsole",
+      "cwd": "${workspaceFolder}/src"
+    },
+    {
+      "name": "C++ (GDB) Launch - Linux/Windows",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${workspaceFolder}/build/verySmallCompiler",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/Adrian/Documents/git/verySmallCompiler/src",
-      "program": "c:/Users/Adrian/Documents/git/verySmallCompiler/src/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
+      "cwd": "${workspaceFolder}/src",
+      "linux": {
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      },
+      "windows": {
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      }
     }
   ]
 }
