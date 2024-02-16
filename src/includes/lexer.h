@@ -10,8 +10,10 @@
 
 using namespace tokenInternals;
 
+/// @brief Namespace for the lexer internals \namespace lexerInternals
 namespace lexerInternals
 {
+    /// @brief Class for the lexer \class Lexer
     class Lexer
     {
     public:
@@ -25,6 +27,7 @@ namespace lexerInternals
         Token getToken(void);
         char getCurChar(void) const;
         bool isEOF(const Token &token) const;
+        void lexRecursively(void);
 
     private:
         std::string source;

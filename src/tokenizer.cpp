@@ -3,12 +3,15 @@
 using namespace tokenInternals;
 using namespace std;
 
+
+/// @brief This is the constructor for the Token class
 Token::Token()
 {
     type = UNKNOWN;
     value = convertString(type);
 }
 
+/// @brief This is the destructor for the Token class
 Token::~Token()
 {
     cout << "-----------------------\n";
@@ -16,6 +19,9 @@ Token::~Token()
     cout << "-----------------------\n";
 }
 
+/// @brief This is the function for the tokens
+/// @param t This is the parameter for the Token Type
+/// @param v This is the parameter for the string value
 Token::Token(TokenType t, string v)
 {
     type = t;
@@ -29,6 +35,9 @@ Token::Token(TokenType t, string v)
     }
 }
 
+/// @brief This is the function to convert the string
+/// @param t This it the Token Type we have to convert
+/// @return This will return the converted token
 string tokenInternals::convertString(TokenType t)
 {
     string text;
@@ -63,6 +72,7 @@ string tokenInternals::convertString(TokenType t)
         break;
     case IF:
         text = "IF";
+        break;
     case PASS:
         text = "PASS";
         break;
@@ -116,10 +126,14 @@ string tokenInternals::convertString(TokenType t)
         break;
     default:
         text = "";
+        break;
     }
     return text;
 }
 
+/// @brief This is the function to check if the token is a keyword
+/// @param text This is the text to be checked
+/// @return This will return the token type
 TokenType tokenInternals::isKeyword(const string &text)
 {
     unordered_map<string,TokenType>::const_iterator got = keywords.find(text);
@@ -129,6 +143,8 @@ TokenType tokenInternals::isKeyword(const string &text)
         return got->second;
 }
 
+/// @brief This is the function for the operator Token
+/// @param rhs This is the token to be assigned
 void Token::operator=(const Token& rhs)
 {
     this->type = rhs.type;

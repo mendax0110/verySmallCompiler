@@ -9,15 +9,17 @@ using namespace lexerInternals;
 using namespace emitterInternals;
 using namespace std;
 
-const string inputFile = "input.ttc";
-const string outputFile = "output.py";
 
-Parser::Parser(const string& source) : indent_count(0), _lexer(make_shared<Lexer>(source)), _emitter(make_shared<Emitter>())
+/// @brief This is the constructor of the Parser class
+/// @param source This is the source code to be parsed
+Parser::Parser(const string& source) 
+    : indent_count(0), _lexer(make_shared<Lexer>(source)), _emitter(make_shared<Emitter>())
 {
     nextToken();
     nextToken();
 }
 
+/// @brief This is the destructor of the Parser class
 Parser::~Parser()
 {
     cout << "------------------------\n";
@@ -25,22 +27,33 @@ Parser::~Parser()
     cout << "------------------------\n";
 }
 
+/// @brief This is the function to check the current token
+/// @param t This is the token to be checked
+/// @return THis will return the result of the check
 bool Parser::checkToken(TokenType t)
 {
     return (currentToken.type == t);
 }
 
+/// @brief This is the function to peek the next token
+/// @param t This is the token to be peeked
+/// @return This will return the result of the peek
 bool Parser::checkPeek(TokenType t)
 {
     return (peekToken.type == t);
 }
 
+/// @brief This is the function to abort the parser
+/// @param message This is the message to be printed
 void Parser::abort(const string& message)
 {
 	cout << message << "\n";
 	throw runtime_error(message);
 }
 
+/// @brief This is the function, that looks for a match in the token
+/// @param t This it the token to be matched
+/// @return This will return false if the token is not matched, otherwise true
 bool Parser::match(TokenType t)
 {
     if (!checkToken(t))
@@ -51,12 +64,14 @@ bool Parser::match(TokenType t)
     return true;
 }
 
+/// @brief This is the function to get the next token
 void Parser::nextToken()
 {
     currentToken = peekToken;
     peekToken = _lexer->getToken();
 }
 
+/// @brief This is the function to emit the indentation
 void Parser::emitIndentation()
 {
     for (int i = 0; i < indent_count; i++)
@@ -65,18 +80,22 @@ void Parser::emitIndentation()
     }
 }
 
+/// @brief This is the function to parse the program
 void Parser::program()
 {
     cout << "program\n";
     while (!checkToken(_EOF))
     {
         statement();
+        debug();
     }
 
     cout << "exit program\n";
     cout << "Current token after program: " << currentToken.value << "\n";
 }
 
+/// @brief This is the function to end the parser, write emitter to file
+/// @param output This is the output file
 void Parser::end(const string& output)
 {
 	ofstream file;
@@ -85,8 +104,10 @@ void Parser::end(const string& output)
     file.close();
 }
 
+/// @brief This is the function to parse all the differnet statements
 void Parser::statement()
 {
+    string errorMessage = "No handling for token: " + currentToken.value;
     cout << "statement\n";
 
     switch(currentToken.type)
@@ -116,11 +137,14 @@ void Parser::statement()
             endOfFile();
             break;
 		default:
-            runtime_error("no match in switch statement");
-			break;
+            throw runtime_error(errorMessage);
+            break;
 	}
+
+    cout << "Exit statement\n";
 }
 
+/// @brief This is the function to parse the pass statement
 void Parser::isPass()
 {
     emitIndentation();
@@ -130,6 +154,7 @@ void Parser::isPass()
     newLine();
 }
 
+/// @brief This is the function to parse the input statement
 void Parser::isInput()
 {
     emitIndentation();
@@ -141,6 +166,7 @@ void Parser::isInput()
     newLine();
 }
 
+/// @brief This is the function to parse the let statement
 void Parser::isLet()
 {
     emitIndentation();
@@ -158,6 +184,7 @@ void Parser::isLet()
     newLine();
 }
 
+/// @brief This is the function to parse the while statement
 void Parser::isWhile()
 {
     emitIndentation();
@@ -179,6 +206,7 @@ void Parser::isWhile()
     cout << "exit isWhile\n";
 }
 
+/// @brief This is the function to parse the if statement
 void Parser::isIf()
 {
     emitIndentation();
@@ -213,6 +241,7 @@ void Parser::isIf()
     cout << "exit IF\n";
 }
 
+/// @brief This is the function to parse the print statement
 void Parser::isPrint()
 {
     cout << "PRINT\n";
@@ -238,11 +267,14 @@ void Parser::isPrint()
     cout << "exit PRINT\n";
 }
 
+/// @brief This is the function to check if the token is a comparison operator
+/// @return This is the result of the check
 bool Parser::isCompareOps()
 {
     return (peekToken.type > START_COMPARE_OPS && peekToken.type < END_COMPARE_OPS);
 }
 
+/// @brief This is the function to parse the comparison
 void Parser::comparison()
 {
     cout << "comparison\n";
@@ -265,6 +297,7 @@ void Parser::comparison()
     cout << "exit comparison\n";
 }
 
+/// @brief This is the function to parse the expression
 void Parser::expression()
 {
     cout << "expression\n";
@@ -279,6 +312,7 @@ void Parser::expression()
     cout << "exit expression\n";
 }
 
+/// @brief This is the function to parse the term
 void Parser::term()
 {
     cout << "term\n";
@@ -293,6 +327,7 @@ void Parser::term()
     cout << "exit term\n";
 }
 
+/// @brief This is the function to parse the unary
 void Parser::unary()
 {
     cout << "unary\n";
@@ -304,6 +339,7 @@ void Parser::unary()
     primary();
 }
 
+/// @brief This is the function to parse the primary
 void Parser::primary()
 {
     cout << "primary ";
@@ -315,6 +351,7 @@ void Parser::primary()
     cout << "exit primary\n";
 }
 
+/// @brief This is the function to parse the new line
 void Parser::newLine()
 {
     cout << "newLine\n";
@@ -332,15 +369,23 @@ void Parser::newLine()
     }
     else
     {
-        match(currentToken.type);
+        //match(currentToken.type);
         //nextToken();
     }
 }
 
+/// @brief This is the function to parse the end of file
 void Parser::endOfFile()
 {
     cout << "endOfFile\n";
     match(_EOF);
     _emitter->emit("\n");
     cout << "exit endOfFile\n";
+}
+
+/// @brief This is the function to debug the currentToken/peekToken value and type
+void Parser::debug()
+{
+    cout << "Current token: " << currentToken.value << " (" << currentToken.type << ")\n";
+	cout << "Peek token: " << peekToken.value << " (" << peekToken.type << ")\n";
 }

@@ -5,6 +5,7 @@
 #include <string>
 #include <unordered_map>
 
+/// @brief Namespace for the token internals \namespace tokenInternals
 namespace tokenInternals 
 {
     typedef enum
@@ -62,6 +63,7 @@ namespace tokenInternals
     std::string convertString(TokenType t);
     TokenType isKeyword(const std::string &text);
 
+    /// @brief Class for the token \class Token
     class Token
     {
     public:

@@ -5,8 +5,10 @@
 #include <string>
 #include <fstream>
 
+/// @brief Namespace for the emitter internals \namespace emitterInternals
 namespace emitterInternals 
 {
+    /// @brief Class for the emitter \class Emitter
     class Emitter
     {
     public:

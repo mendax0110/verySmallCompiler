@@ -12,8 +12,10 @@ using namespace lexerInternals;
 using namespace tokenInternals;
 using namespace emitterInternals;
 
+/// @brief Namespace for the parser internals \namespace parserInternals
 namespace parserInternals
 {
+    /// @brief Class for the parser \class Parser
     class Parser
     {
     public:
@@ -34,7 +36,7 @@ namespace parserInternals
         void isWhile();
         void isIf();
         void isPrint();
-        
+
     private:
         Token currentToken;
         Token peekToken;

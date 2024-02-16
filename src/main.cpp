@@ -11,44 +11,59 @@ using namespace lexerInternals;
 using namespace tokenInternals;
 using namespace parserInternals;
 using namespace std;
-
-const string inputFile = "input.ttc";
-const string outputFile = "output.py";
-filesystem::path inputFilePath = "../inputLang/" + inputFile;
-filesystem::path outputFilePath = "../outputLang/" + outputFile;
+namespace fs = filesystem;
 
 
-int main() 
+const string outputDirectory = "../outputLang/";
+
+/// @brief This is the function to process the file for the compiler
+/// @param inputFilePath These are the input files
+void processFile(const fs::path& inputFilePath) 
 {
-    ifstream inFile;
+    ifstream inFile(inputFilePath);
 
-    if (inFile.is_open())
+    if (!inFile.is_open()) 
     {
-        cerr << "Error: Unable to open input file." << endl;
-        return 1;
+        cerr << "Error: Unable to open input file: " << inputFilePath << endl;
+        return;
     }
-    else
-    {
-        cout << "Input file opened successfully." << endl;
-        inFile.open(inputFilePath);
-    }
+
+    cout << "Processing input file: " << inputFilePath << endl;
 
     stringstream strStream;
     strStream << inFile.rdbuf();
     string source = strStream.str();
-    
-	Lexer lexer(source);
+
+    Lexer lexer(source);
     Token token = lexer.getToken();
-	while (!lexer.isEOF(token))
-    {
-		cout << token.value << "\n" << endl;
+    while (!lexer.isEOF(token)) {
+        cout << token.value << "\n" << endl;
         token = lexer.getToken();
     }
-    
-    Parser parser (source);
+
+    Parser parser(source);
     parser.program();
     cout << "Parsing completed\n";
+
+    string outputFileName = outputDirectory + inputFilePath.stem().string() + ".py";
+    fs::path outputFilePath = outputFileName;
+
     parser.end(outputFilePath.string());
-    
+}
+
+/// @brief This is the main function for the compiler
+/// @return This will return 0 if the program runs successfully
+int main() 
+{
+    const string inputDirectory = "../inputLang/";
+
+    for (const auto& entry : fs::directory_iterator(inputDirectory))
+    {
+        if (entry.is_regular_file())
+        {
+            processFile(entry.path());
+        }
+    }
+
     return 0;
 }

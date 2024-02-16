@@ -6,3 +6,6 @@
 
 # ignore .vscode folder
 .vscode
+
+# ignore Doxyfile
+/docs/Doxygen/Doxyfile
