@@ -1,0 +1,145 @@
+\doxysection{token\+Internals Namespace Reference}
+\hypertarget{namespacetoken_internals}{}\label{namespacetoken_internals}\index{tokenInternals@{tokenInternals}}
+
+
+Namespace for the token internals.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}
+\begin{DoxyCompactList}\small\item\em Class for the token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Token\+Type} \{ \newline
+{\bfseries UNKNOWN}
+, {\bfseries START\+\_\+\+GENERALS}
+, {\bfseries \+\_\+\+EOF}
+, {\bfseries NEWLINE}
+, \newline
+{\bfseries NUMBER}
+, {\bfseries ID}
+, {\bfseries STRING}
+, {\bfseries END\+\_\+\+GENERALS}
+, \newline
+{\bfseries START\+\_\+\+KEYWORDS}
+, {\bfseries PRINT}
+, {\bfseries INPUT}
+, {\bfseries LET}
+, \newline
+{\bfseries IF}
+, {\bfseries PASS}
+, {\bfseries ELSE}
+, {\bfseries THEN}
+, \newline
+{\bfseries ENDIF}
+, {\bfseries WHILE}
+, {\bfseries ENDWHILE}
+, {\bfseries END\+\_\+\+KEYWORDS}
+, \newline
+{\bfseries START\+\_\+\+OPERATORS}
+, {\bfseries EQ}
+, {\bfseries PLUS}
+, {\bfseries MINUS}
+, \newline
+{\bfseries ASTERISK}
+, {\bfseries SLASH}
+, {\bfseries END\+\_\+\+OPERATORS}
+, {\bfseries START\+\_\+\+COMPARE\+\_\+\+OPS}
+, \newline
+{\bfseries EQEQ}
+, {\bfseries NOTEQ}
+, {\bfseries LT}
+, {\bfseries LTEQ}
+, \newline
+{\bfseries GT}
+, {\bfseries GTEQ}
+, {\bfseries END\+\_\+\+COMPARE\+\_\+\+OPS}
+, {\bfseries NUM\+\_\+\+TOKENTYPES}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespacetoken_internals_a85badbd1224be4a078c5516351e55cc6}{convert\+String}} (Token\+Type t)
+\begin{DoxyCompactList}\small\item\em This is the function to convert the string. \end{DoxyCompactList}\item 
+\Hypertarget{namespacetoken_internals_a11d2b0dd33fece3a31d083dded3111ea}\label{namespacetoken_internals_a11d2b0dd33fece3a31d083dded3111ea} 
+Token\+Type {\bfseries is\+Keyword} (const std\+::string \&text)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::unordered\+\_\+map$<$ std\+::string, Token\+Type $>$ \mbox{\hyperlink{namespacetoken_internals_a90757d2320ae79508c8bb8bf863076c4}{keywords}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace for the token internals. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacetoken_internals_a70a4d37f99588491e19ce0c8667289ea}\label{namespacetoken_internals_a70a4d37f99588491e19ce0c8667289ea} 
+\index{tokenInternals@{tokenInternals}!TokenType@{TokenType}}
+\index{TokenType@{TokenType}!tokenInternals@{tokenInternals}}
+\doxysubsubsection{\texorpdfstring{TokenType}{TokenType}}
+{\footnotesize\ttfamily enum token\+Internals\+::\+Token\+Type}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8h_source_l00011}{11}} of file \mbox{\hyperlink{tokenizer_8h_source}{tokenizer.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacetoken_internals_a85badbd1224be4a078c5516351e55cc6}\label{namespacetoken_internals_a85badbd1224be4a078c5516351e55cc6} 
+\index{tokenInternals@{tokenInternals}!convertString@{convertString}}
+\index{convertString@{convertString}!tokenInternals@{tokenInternals}}
+\doxysubsubsection{\texorpdfstring{convertString()}{convertString()}}
+{\footnotesize\ttfamily string token\+Internals\+::convert\+String (\begin{DoxyParamCaption}\item[{Token\+Type}]{t }\end{DoxyParamCaption})}
+
+
+
+This is the function to convert the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & This it the \doxylink{classtoken_internals_1_1_token}{Token} Type we have to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return the converted token 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{tokenizer_8cpp_source}{tokenizer.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacetoken_internals_a90757d2320ae79508c8bb8bf863076c4}\label{namespacetoken_internals_a90757d2320ae79508c8bb8bf863076c4} 
+\index{tokenInternals@{tokenInternals}!keywords@{keywords}}
+\index{keywords@{keywords}!tokenInternals@{tokenInternals}}
+\doxysubsubsection{\texorpdfstring{keywords}{keywords}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$std\+::string, Token\+Type$>$ token\+Internals\+::keywords}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\{\textcolor{stringliteral}{"{}PRINT"{}},\ PRINT\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}INPUT"{}},INPUT\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}LET"{}},\ LET\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}IF"{}},\ IF\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}PASS"{}},\ PASS\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ELSE"{}},\ ELSE\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}THEN"{}},\ THEN\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDIF"{}},\ ENDIF\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}WHILE"{}},\ WHILE\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDWHILE"{}},\ ENDWHILE\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}EOF"{}},\ \_EOF\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}NEWLINE"{}},\ NEWLINE\}\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8h_source_l00051}{51}} of file \mbox{\hyperlink{tokenizer_8h_source}{tokenizer.\+h}}.
+

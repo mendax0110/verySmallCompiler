@@ -1,0 +1,71 @@
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{C:/Users/Adrian/Documents/git/verySmallCompiler/src/main.cpp@{C:/Users/Adrian/Documents/git/verySmallCompiler/src/main.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../src/includes/tokenizer.h"{}}\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../src/includes/lexer.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../src/includes/parser.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacelexer_internals}{lexerInternals}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacetoken_internals}{tokenInternals}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceparser_internals}{parserInternals}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \textcolor{keyword}{namespace\ }fs\ =\ filesystem;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ outputDirectory\ =\ \textcolor{stringliteral}{"{}../outputLang/"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \textcolor{keywordtype}{void}\ processFile(\textcolor{keyword}{const}\ fs::path\&\ inputFilePath)\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ ifstream\ inFile(inputFilePath);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inFile.is\_open())\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Unable\ to\ open\ input\ file:\ "{}}\ <<\ inputFilePath\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Processing\ input\ file:\ "{}}\ <<\ inputFilePath\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ stringstream\ strStream;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ strStream\ <<\ inFile.rdbuf();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{string}\ source\ =\ strStream.str();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classlexer_internals_1_1_lexer}{Lexer}}\ lexer(source);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}\ token\ =\ lexer.getToken();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{while}\ (!lexer.isEOF(token))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ cout\ <<\ token.value\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ token\ =\ lexer.getToken();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classparser_internals_1_1_parser}{Parser}}\ parser(source);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ parser.program();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Parsing\ completed\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{string}\ outputFileName\ =\ outputDirectory\ +\ inputFilePath.stem().string()\ +\ \textcolor{stringliteral}{"{}.py"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ fs::path\ outputFilePath\ =\ outputFileName;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ parser.end(outputFilePath.string());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \textcolor{keywordtype}{int}\ main()\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ inputDirectory\ =\ \textcolor{stringliteral}{"{}../inputLang/"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ fs::directory\_iterator(inputDirectory))}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file())}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ processFile(entry.path());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \}}
+
+\end{DoxyCode}

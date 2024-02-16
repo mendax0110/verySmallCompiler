@@ -1,0 +1,128 @@
+\doxysection{emitter\+Internals\+::Emitter Class Reference}
+\hypertarget{classemitter_internals_1_1_emitter}{}\label{classemitter_internals_1_1_emitter}\index{emitterInternals::Emitter@{emitterInternals::Emitter}}
+
+
+Class for the emitter.  
+
+
+
+
+{\ttfamily \#include $<$emitter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classemitter_internals_1_1_emitter_abf64c2bcea8e7f44d41998c63dd17445}{Emitter}} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{classemitter_internals_1_1_emitter}{Emitter} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classemitter_internals_1_1_emitter_a0af9a50316daf2580cde9b99fe7c6f96}{\texorpdfstring{$\sim$}{\string~}\+Emitter}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the \doxylink{classemitter_internals_1_1_emitter}{Emitter} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classemitter_internals_1_1_emitter_adb2dd64b171d68b63fc3c30dc0ae879d}{emit}} (std\+::string c)
+\begin{DoxyCompactList}\small\item\em This is the emit function that emit a line of code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classemitter_internals_1_1_emitter_a5e8bfd053005e13ac0b74258780f0db7}{emit\+Line}} (std\+::string c)
+\begin{DoxyCompactList}\small\item\em This is the emit\+Line function that emits a line of code and adds a newline character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classemitter_internals_1_1_emitter_aa1592c43d36887b8c7a44c61b609b649}{write}} (std\+::string output)
+\begin{DoxyCompactList}\small\item\em This is the write function that writes the output to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for the emitter. 
+
+Definition at line \mbox{\hyperlink{emitter_8h_source_l00012}{12}} of file \mbox{\hyperlink{emitter_8h_source}{emitter.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classemitter_internals_1_1_emitter_abf64c2bcea8e7f44d41998c63dd17445}\label{classemitter_internals_1_1_emitter_abf64c2bcea8e7f44d41998c63dd17445} 
+\index{emitterInternals::Emitter@{emitterInternals::Emitter}!Emitter@{Emitter}}
+\index{Emitter@{Emitter}!emitterInternals::Emitter@{emitterInternals::Emitter}}
+\doxysubsubsection{\texorpdfstring{Emitter()}{Emitter()}}
+{\footnotesize\ttfamily Emitter\+::\+Emitter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the constructor for the \doxylink{classemitter_internals_1_1_emitter}{Emitter} class. 
+
+
+
+Definition at line \mbox{\hyperlink{emitter_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{emitter_8cpp_source}{emitter.\+cpp}}.
+
+\Hypertarget{classemitter_internals_1_1_emitter_a0af9a50316daf2580cde9b99fe7c6f96}\label{classemitter_internals_1_1_emitter_a0af9a50316daf2580cde9b99fe7c6f96} 
+\index{emitterInternals::Emitter@{emitterInternals::Emitter}!````~Emitter@{\texorpdfstring{$\sim$}{\string~}Emitter}}
+\index{````~Emitter@{\texorpdfstring{$\sim$}{\string~}Emitter}!emitterInternals::Emitter@{emitterInternals::Emitter}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Emitter()}{\string~Emitter()}}
+{\footnotesize\ttfamily Emitter\+::\texorpdfstring{$\sim$}{\string~}\+Emitter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the destructor for the \doxylink{classemitter_internals_1_1_emitter}{Emitter} class. 
+
+
+
+Definition at line \mbox{\hyperlink{emitter_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{emitter_8cpp_source}{emitter.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classemitter_internals_1_1_emitter_adb2dd64b171d68b63fc3c30dc0ae879d}\label{classemitter_internals_1_1_emitter_adb2dd64b171d68b63fc3c30dc0ae879d} 
+\index{emitterInternals::Emitter@{emitterInternals::Emitter}!emit@{emit}}
+\index{emit@{emit}!emitterInternals::Emitter@{emitterInternals::Emitter}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily void Emitter\+::emit (\begin{DoxyParamCaption}\item[{std\+::string}]{c }\end{DoxyParamCaption})}
+
+
+
+This is the emit function that emit a line of code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & This is the line of code to be emitted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{emitter_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{emitter_8cpp_source}{emitter.\+cpp}}.
+
+\Hypertarget{classemitter_internals_1_1_emitter_a5e8bfd053005e13ac0b74258780f0db7}\label{classemitter_internals_1_1_emitter_a5e8bfd053005e13ac0b74258780f0db7} 
+\index{emitterInternals::Emitter@{emitterInternals::Emitter}!emitLine@{emitLine}}
+\index{emitLine@{emitLine}!emitterInternals::Emitter@{emitterInternals::Emitter}}
+\doxysubsubsection{\texorpdfstring{emitLine()}{emitLine()}}
+{\footnotesize\ttfamily void Emitter\+::emit\+Line (\begin{DoxyParamCaption}\item[{std\+::string}]{c }\end{DoxyParamCaption})}
+
+
+
+This is the emit\+Line function that emits a line of code and adds a newline character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & This is the line of code to be emitted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{emitter_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{emitter_8cpp_source}{emitter.\+cpp}}.
+
+\Hypertarget{classemitter_internals_1_1_emitter_aa1592c43d36887b8c7a44c61b609b649}\label{classemitter_internals_1_1_emitter_aa1592c43d36887b8c7a44c61b609b649} 
+\index{emitterInternals::Emitter@{emitterInternals::Emitter}!write@{write}}
+\index{write@{write}!emitterInternals::Emitter@{emitterInternals::Emitter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Emitter\+::write (\begin{DoxyParamCaption}\item[{std\+::string}]{output }\end{DoxyParamCaption})}
+
+
+
+This is the write function that writes the output to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & This is the output file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{emitter_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{emitter_8cpp_source}{emitter.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/very\+Small\+Compiler/src/includes/emitter.\+h\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/very\+Small\+Compiler/src/emitter.\+cpp\end{DoxyCompactItemize}

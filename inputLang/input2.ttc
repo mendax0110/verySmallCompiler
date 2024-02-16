@@ -1,0 +1,26 @@
+PRINT "COMPLEX TRYOUT"
+INPUT a
+INPUT b
+INPUT c
+PRINT " "
+
+IF a > 5
+    LET x = 2
+    LET y = 3
+    LET a = x + y + a
+    PRINT a
+ENDIF
+
+IF b < 4
+    LET x = 2
+    LET y = 3
+    LET b = x + y + b
+    PRINT b
+ENDIF
+
+IF c == 5
+    LET x = 2
+    LET y = 3
+    LET c = x + y + c
+    PRINT c
+ENDIF

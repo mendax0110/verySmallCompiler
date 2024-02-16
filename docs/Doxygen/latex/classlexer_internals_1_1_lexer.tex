@@ -1,0 +1,232 @@
+\doxysection{lexer\+Internals\+::Lexer Class Reference}
+\hypertarget{classlexer_internals_1_1_lexer}{}\label{classlexer_internals_1_1_lexer}\index{lexerInternals::Lexer@{lexerInternals::Lexer}}
+
+
+Class for the lexer.  
+
+
+
+
+{\ttfamily \#include $<$lexer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlexer_internals_1_1_lexer_a734c37d7e5aa73e0449021cc14bf4cb5}{Lexer}} (std\+::string src)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{classlexer_internals_1_1_lexer}{Lexer} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_internals_1_1_lexer_ad26a84af23d8d303723e36e83fc4e556}{\texorpdfstring{$\sim$}{\string~}\+Lexer}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the \doxylink{classlexer_internals_1_1_lexer}{Lexer} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_internals_1_1_lexer_aeab3a965b0f0464fadaf477007e44e5f}{next\+Char}} (void)
+\begin{DoxyCompactList}\small\item\em This is the function that gets the next character. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classlexer_internals_1_1_lexer_a5bb4580b7e48f51eaeee635deaff2034}{peek}} (void) const
+\begin{DoxyCompactList}\small\item\em This is the function that peeks the next character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_internals_1_1_lexer_a63b7c1c5c97603b9e59d664e8c8cfab2}{abort}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em This is the function that aborts the lexer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_internals_1_1_lexer_a2cdcbbec739233d3ffb94b9faa8a7f2a}{skip\+Whitespace}} (void)
+\begin{DoxyCompactList}\small\item\em This is the funciton that skips the whitespace. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_internals_1_1_lexer_a3c5311f6f7ade2d7927c7f82d85a725a}{skip\+Comment}} (void)
+\begin{DoxyCompactList}\small\item\em This is the function that skips the comment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtoken_internals_1_1_token}{Token}} \mbox{\hyperlink{classlexer_internals_1_1_lexer_a90c9ef91542536a3cfdc88b4b96db943}{get\+Token}} (void)
+\begin{DoxyCompactList}\small\item\em This is the function that gets the token. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classlexer_internals_1_1_lexer_a70520e8bf700163de1ac4c85ee505c81}{get\+Cur\+Char}} (void) const
+\begin{DoxyCompactList}\small\item\em This is the function to get the current char. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlexer_internals_1_1_lexer_a755ae0d99cbeb29064b9edfd59980c86}{is\+EOF}} (const \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}} \&token) const
+\begin{DoxyCompactList}\small\item\em This is the function that checks if the token is the end of file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_internals_1_1_lexer_a35228a165183a34a4e69ad42812a102d}{lex\+Recursively}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for the lexer. 
+
+Definition at line \mbox{\hyperlink{lexer_8h_source_l00017}{17}} of file \mbox{\hyperlink{lexer_8h_source}{lexer.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlexer_internals_1_1_lexer_a734c37d7e5aa73e0449021cc14bf4cb5}\label{classlexer_internals_1_1_lexer_a734c37d7e5aa73e0449021cc14bf4cb5} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{Lexer()}{Lexer()}}
+{\footnotesize\ttfamily Lexer\+::\+Lexer (\begin{DoxyParamCaption}\item[{std\+::string}]{src }\end{DoxyParamCaption})}
+
+
+
+This is the constructor for the \doxylink{classlexer_internals_1_1_lexer}{Lexer} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em This} & is the source code to be lexed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_ad26a84af23d8d303723e36e83fc4e556}\label{classlexer_internals_1_1_lexer_ad26a84af23d8d303723e36e83fc4e556} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!````~Lexer@{\texorpdfstring{$\sim$}{\string~}Lexer}}
+\index{````~Lexer@{\texorpdfstring{$\sim$}{\string~}Lexer}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Lexer()}{\string~Lexer()}}
+{\footnotesize\ttfamily Lexer\+::\texorpdfstring{$\sim$}{\string~}\+Lexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the destructor for the \doxylink{classlexer_internals_1_1_lexer}{Lexer} class. 
+
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlexer_internals_1_1_lexer_a63b7c1c5c97603b9e59d664e8c8cfab2}\label{classlexer_internals_1_1_lexer_a63b7c1c5c97603b9e59d664e8c8cfab2} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!abort@{abort}}
+\index{abort@{abort}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{abort()}{abort()}}
+{\footnotesize\ttfamily void Lexer\+::abort (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+This is the function that aborts the lexer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & This is the reason message for the abort \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_a70520e8bf700163de1ac4c85ee505c81}\label{classlexer_internals_1_1_lexer_a70520e8bf700163de1ac4c85ee505c81} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!getCurChar@{getCurChar}}
+\index{getCurChar@{getCurChar}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{getCurChar()}{getCurChar()}}
+{\footnotesize\ttfamily char Lexer\+::get\+Cur\+Char (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+This is the function to get the current char. 
+
+\begin{DoxyReturn}{Returns}
+This will return the current char 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00166}{166}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_a90c9ef91542536a3cfdc88b4b96db943}\label{classlexer_internals_1_1_lexer_a90c9ef91542536a3cfdc88b4b96db943} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!getToken@{getToken}}
+\index{getToken@{getToken}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{getToken()}{getToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}} Lexer\+::get\+Token (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the function that gets the token. 
+
+\begin{DoxyReturn}{Returns}
+This will return the token 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_a755ae0d99cbeb29064b9edfd59980c86}\label{classlexer_internals_1_1_lexer_a755ae0d99cbeb29064b9edfd59980c86} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!isEOF@{isEOF}}
+\index{isEOF@{isEOF}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{isEOF()}{isEOF()}}
+{\footnotesize\ttfamily bool Lexer\+::is\+EOF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}} \&}]{token }\end{DoxyParamCaption}) const}
+
+
+
+This is the function that checks if the token is the end of file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & This is the token to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return the result of the check 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_a35228a165183a34a4e69ad42812a102d}\label{classlexer_internals_1_1_lexer_a35228a165183a34a4e69ad42812a102d} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!lexRecursively@{lexRecursively}}
+\index{lexRecursively@{lexRecursively}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{lexRecursively()}{lexRecursively()}}
+{\footnotesize\ttfamily void Lexer\+::lex\+Recursively (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00187}{187}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_aeab3a965b0f0464fadaf477007e44e5f}\label{classlexer_internals_1_1_lexer_aeab3a965b0f0464fadaf477007e44e5f} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!nextChar@{nextChar}}
+\index{nextChar@{nextChar}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{nextChar()}{nextChar()}}
+{\footnotesize\ttfamily void Lexer\+::next\+Char (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the function that gets the next character. 
+
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_a5bb4580b7e48f51eaeee635deaff2034}\label{classlexer_internals_1_1_lexer_a5bb4580b7e48f51eaeee635deaff2034} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!peek@{peek}}
+\index{peek@{peek}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily char Lexer\+::peek (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+This is the function that peeks the next character. 
+
+\begin{DoxyReturn}{Returns}
+This will return the peek to the next character 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_a3c5311f6f7ade2d7927c7f82d85a725a}\label{classlexer_internals_1_1_lexer_a3c5311f6f7ade2d7927c7f82d85a725a} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!skipComment@{skipComment}}
+\index{skipComment@{skipComment}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{skipComment()}{skipComment()}}
+{\footnotesize\ttfamily void Lexer\+::skip\+Comment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the function that skips the comment. 
+
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+\Hypertarget{classlexer_internals_1_1_lexer_a2cdcbbec739233d3ffb94b9faa8a7f2a}\label{classlexer_internals_1_1_lexer_a2cdcbbec739233d3ffb94b9faa8a7f2a} 
+\index{lexerInternals::Lexer@{lexerInternals::Lexer}!skipWhitespace@{skipWhitespace}}
+\index{skipWhitespace@{skipWhitespace}!lexerInternals::Lexer@{lexerInternals::Lexer}}
+\doxysubsubsection{\texorpdfstring{skipWhitespace()}{skipWhitespace()}}
+{\footnotesize\ttfamily void Lexer\+::skip\+Whitespace (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the funciton that skips the whitespace. 
+
+
+
+Definition at line \mbox{\hyperlink{lexer_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{lexer_8cpp_source}{lexer.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/very\+Small\+Compiler/src/includes/lexer.\+h\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/very\+Small\+Compiler/src/lexer.\+cpp\end{DoxyCompactItemize}

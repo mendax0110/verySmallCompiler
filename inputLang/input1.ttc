@@ -1,0 +1,8 @@
+PRINT "SIMPLE TRYOUT"
+INPUT a
+PRINT " "
+
+WHILE a < 10
+    PRINT a
+    LET a = a + 1
+ENDWHILE
