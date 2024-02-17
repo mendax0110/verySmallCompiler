@@ -21,8 +21,8 @@ namespace parserInternals
     public:
         Parser(const std::string& source);
         ~Parser();
-        bool checkToken(TokenType t);
-        bool checkPeek(TokenType t);
+        bool checkToken(TokenType t) const;
+        bool checkPeek(TokenType t) const;
         bool match(TokenType t);
         void nextToken();
         void emitIndentation();
@@ -45,7 +45,7 @@ namespace parserInternals
         std::shared_ptr<Lexer> _lexer;
         std::shared_ptr<Emitter> _emitter;
 
-        bool isCompareOps();
+        bool isCompareOps() const;
         void statement();
         void expression();
         void newLine();
@@ -54,7 +54,7 @@ namespace parserInternals
         void unary();
         void primary();
         void endOfFile();
-        void debug();
+        void debug() const;
     };
 }
 

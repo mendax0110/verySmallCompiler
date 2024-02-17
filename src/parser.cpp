@@ -30,7 +30,7 @@ Parser::~Parser()
 /// @brief This is the function to check the current token
 /// @param t This is the token to be checked
 /// @return THis will return the result of the check
-bool Parser::checkToken(TokenType t)
+bool Parser::checkToken(TokenType t) const
 {
     return (currentToken.type == t);
 }
@@ -38,7 +38,7 @@ bool Parser::checkToken(TokenType t)
 /// @brief This is the function to peek the next token
 /// @param t This is the token to be peeked
 /// @return This will return the result of the peek
-bool Parser::checkPeek(TokenType t)
+bool Parser::checkPeek(TokenType t) const
 {
     return (peekToken.type == t);
 }
@@ -307,7 +307,7 @@ void Parser::isPrint()
 
 /// @brief This is the function to check if the token is a comparison operator
 /// @return This is the result of the check
-bool Parser::isCompareOps()
+bool Parser::isCompareOps() const
 {
     return (peekToken.type > START_COMPARE_OPS && peekToken.type < END_COMPARE_OPS);
 }
@@ -416,7 +416,7 @@ void Parser::endOfFile()
 }
 
 /// @brief This is the function to debug the currentToken/peekToken value and type
-void Parser::debug()
+void Parser::debug() const
 {
     cout << "Current token: " << currentToken.value << " (" << currentToken.type << ")\n";
 	cout << "Peek token: " << peekToken.value << " (" << peekToken.type << ")\n";
