@@ -16,9 +16,9 @@ Class for the parser.
 \begin{DoxyCompactList}\small\item\em This is the constructor of the \doxylink{classparser_internals_1_1_parser}{Parser} class. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classparser_internals_1_1_parser_a3e658b5917a93a3ef648050d060e3a93}{\texorpdfstring{$\sim$}{\string~}\+Parser}} ()
 \begin{DoxyCompactList}\small\item\em This is the destructor of the \doxylink{classparser_internals_1_1_parser}{Parser} class. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classparser_internals_1_1_parser_a89ffe816b26a395479f83a5672b01d42}{check\+Token}} (Token\+Type t)
+bool \mbox{\hyperlink{classparser_internals_1_1_parser_ae36f93478783de377c22d9bed17e3c94}{check\+Token}} (Token\+Type t) const
 \begin{DoxyCompactList}\small\item\em This is the function to check the current token. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classparser_internals_1_1_parser_ac39166f4565ec0bf15b68739a4cf43c4}{check\+Peek}} (Token\+Type t)
+bool \mbox{\hyperlink{classparser_internals_1_1_parser_a701ca5200f6b4ecd6e1ed01164d3bfd8}{check\+Peek}} (Token\+Type t) const
 \begin{DoxyCompactList}\small\item\em This is the function to peek the next token. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classparser_internals_1_1_parser_acad4b84eb3bcffba31d8b4a402ad2840}{match}} (Token\+Type t)
 \begin{DoxyCompactList}\small\item\em This is the function, that looks for a match in the token. \end{DoxyCompactList}\item 
@@ -40,6 +40,8 @@ void \mbox{\hyperlink{classparser_internals_1_1_parser_aa36a811aae28f8def6e68a62
 \begin{DoxyCompactList}\small\item\em This is the function to parse the let statement. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classparser_internals_1_1_parser_a51a54b9b0489f5959c6dcc8d22337194}{is\+While}} ()
 \begin{DoxyCompactList}\small\item\em This is the function to parse the while statement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classparser_internals_1_1_parser_aae4246c050e6f789410c15e2175f4a32}{is\+For}} ()
+\begin{DoxyCompactList}\small\item\em This is the function to parse the for statement. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classparser_internals_1_1_parser_abf3714dafd368a2145aa5cb25c79fd61}{is\+If}} ()
 \begin{DoxyCompactList}\small\item\em This is the function to parse the if statement. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classparser_internals_1_1_parser_a8f67cab10702642b0484e7502f69b6b6}{is\+Print}} ()
@@ -109,11 +111,11 @@ This is the function to abort the parser.
 
 Definition at line \mbox{\hyperlink{parser_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
-\Hypertarget{classparser_internals_1_1_parser_ac39166f4565ec0bf15b68739a4cf43c4}\label{classparser_internals_1_1_parser_ac39166f4565ec0bf15b68739a4cf43c4} 
+\Hypertarget{classparser_internals_1_1_parser_a701ca5200f6b4ecd6e1ed01164d3bfd8}\label{classparser_internals_1_1_parser_a701ca5200f6b4ecd6e1ed01164d3bfd8} 
 \index{parserInternals::Parser@{parserInternals::Parser}!checkPeek@{checkPeek}}
 \index{checkPeek@{checkPeek}!parserInternals::Parser@{parserInternals::Parser}}
 \doxysubsubsection{\texorpdfstring{checkPeek()}{checkPeek()}}
-{\footnotesize\ttfamily bool Parser\+::check\+Peek (\begin{DoxyParamCaption}\item[{Token\+Type}]{t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Parser\+::check\+Peek (\begin{DoxyParamCaption}\item[{Token\+Type}]{t }\end{DoxyParamCaption}) const}
 
 
 
@@ -131,11 +133,11 @@ This will return the result of the peek
 
 Definition at line \mbox{\hyperlink{parser_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
-\Hypertarget{classparser_internals_1_1_parser_a89ffe816b26a395479f83a5672b01d42}\label{classparser_internals_1_1_parser_a89ffe816b26a395479f83a5672b01d42} 
+\Hypertarget{classparser_internals_1_1_parser_ae36f93478783de377c22d9bed17e3c94}\label{classparser_internals_1_1_parser_ae36f93478783de377c22d9bed17e3c94} 
 \index{parserInternals::Parser@{parserInternals::Parser}!checkToken@{checkToken}}
 \index{checkToken@{checkToken}!parserInternals::Parser@{parserInternals::Parser}}
 \doxysubsubsection{\texorpdfstring{checkToken()}{checkToken()}}
-{\footnotesize\ttfamily bool Parser\+::check\+Token (\begin{DoxyParamCaption}\item[{Token\+Type}]{t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Parser\+::check\+Token (\begin{DoxyParamCaption}\item[{Token\+Type}]{t }\end{DoxyParamCaption}) const}
 
 
 
@@ -186,6 +188,20 @@ This is the function to end the parser, write emitter to file.
 
 Definition at line \mbox{\hyperlink{parser_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
+\Hypertarget{classparser_internals_1_1_parser_aae4246c050e6f789410c15e2175f4a32}\label{classparser_internals_1_1_parser_aae4246c050e6f789410c15e2175f4a32} 
+\index{parserInternals::Parser@{parserInternals::Parser}!isFor@{isFor}}
+\index{isFor@{isFor}!parserInternals::Parser@{parserInternals::Parser}}
+\doxysubsubsection{\texorpdfstring{isFor()}{isFor()}}
+{\footnotesize\ttfamily void Parser\+::is\+For (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the function to parse the for statement. 
+
+
+
+Definition at line \mbox{\hyperlink{parser_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
+
 \Hypertarget{classparser_internals_1_1_parser_abf3714dafd368a2145aa5cb25c79fd61}\label{classparser_internals_1_1_parser_abf3714dafd368a2145aa5cb25c79fd61} 
 \index{parserInternals::Parser@{parserInternals::Parser}!isIf@{isIf}}
 \index{isIf@{isIf}!parserInternals::Parser@{parserInternals::Parser}}
@@ -198,7 +214,7 @@ This is the function to parse the if statement.
 
 
 
-Definition at line \mbox{\hyperlink{parser_8cpp_source_l00210}{210}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
+Definition at line \mbox{\hyperlink{parser_8cpp_source_l00248}{248}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
 \Hypertarget{classparser_internals_1_1_parser_acc69338b11fed4936ad9229f788de311}\label{classparser_internals_1_1_parser_acc69338b11fed4936ad9229f788de311} 
 \index{parserInternals::Parser@{parserInternals::Parser}!isInput@{isInput}}
@@ -212,7 +228,7 @@ This is the function to parse the input statement.
 
 
 
-Definition at line \mbox{\hyperlink{parser_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
+Definition at line \mbox{\hyperlink{parser_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
 \Hypertarget{classparser_internals_1_1_parser_aa36a811aae28f8def6e68a6214da1bdd}\label{classparser_internals_1_1_parser_aa36a811aae28f8def6e68a6214da1bdd} 
 \index{parserInternals::Parser@{parserInternals::Parser}!isLet@{isLet}}
@@ -226,7 +242,7 @@ This is the function to parse the let statement.
 
 
 
-Definition at line \mbox{\hyperlink{parser_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
+Definition at line \mbox{\hyperlink{parser_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
 \Hypertarget{classparser_internals_1_1_parser_a0a0a104489ac2aa6647a1cf9b38d1f62}\label{classparser_internals_1_1_parser_a0a0a104489ac2aa6647a1cf9b38d1f62} 
 \index{parserInternals::Parser@{parserInternals::Parser}!isPass@{isPass}}
@@ -240,7 +256,7 @@ This is the function to parse the pass statement.
 
 
 
-Definition at line \mbox{\hyperlink{parser_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
+Definition at line \mbox{\hyperlink{parser_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
 \Hypertarget{classparser_internals_1_1_parser_a8f67cab10702642b0484e7502f69b6b6}\label{classparser_internals_1_1_parser_a8f67cab10702642b0484e7502f69b6b6} 
 \index{parserInternals::Parser@{parserInternals::Parser}!isPrint@{isPrint}}
@@ -254,7 +270,7 @@ This is the function to parse the print statement.
 
 
 
-Definition at line \mbox{\hyperlink{parser_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
+Definition at line \mbox{\hyperlink{parser_8cpp_source_l00283}{283}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
 \Hypertarget{classparser_internals_1_1_parser_a51a54b9b0489f5959c6dcc8d22337194}\label{classparser_internals_1_1_parser_a51a54b9b0489f5959c6dcc8d22337194} 
 \index{parserInternals::Parser@{parserInternals::Parser}!isWhile@{isWhile}}
@@ -268,7 +284,7 @@ This is the function to parse the while statement.
 
 
 
-Definition at line \mbox{\hyperlink{parser_8cpp_source_l00188}{188}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
+Definition at line \mbox{\hyperlink{parser_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{parser_8cpp_source}{parser.\+cpp}}.
 
 \Hypertarget{classparser_internals_1_1_parser_acad4b84eb3bcffba31d8b4a402ad2840}\label{classparser_internals_1_1_parser_acad4b84eb3bcffba31d8b4a402ad2840} 
 \index{parserInternals::Parser@{parserInternals::Parser}!match@{match}}

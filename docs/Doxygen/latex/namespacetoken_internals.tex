@@ -35,27 +35,31 @@ enum {\bfseries Token\+Type} \{ \newline
 , {\bfseries THEN}
 , \newline
 {\bfseries ENDIF}
-, {\bfseries WHILE}
+, {\bfseries FOR}
+, {\bfseries ENDFOR}
+, {\bfseries TO}
+, \newline
+{\bfseries WHILE}
 , {\bfseries ENDWHILE}
 , {\bfseries END\+\_\+\+KEYWORDS}
+, {\bfseries START\+\_\+\+OPERATORS}
 , \newline
-{\bfseries START\+\_\+\+OPERATORS}
-, {\bfseries EQ}
+{\bfseries EQ}
 , {\bfseries PLUS}
 , {\bfseries MINUS}
+, {\bfseries ASTERISK}
 , \newline
-{\bfseries ASTERISK}
-, {\bfseries SLASH}
+{\bfseries SLASH}
 , {\bfseries END\+\_\+\+OPERATORS}
 , {\bfseries START\+\_\+\+COMPARE\+\_\+\+OPS}
+, {\bfseries EQEQ}
 , \newline
-{\bfseries EQEQ}
-, {\bfseries NOTEQ}
+{\bfseries NOTEQ}
 , {\bfseries LT}
 , {\bfseries LTEQ}
+, {\bfseries GT}
 , \newline
-{\bfseries GT}
-, {\bfseries GTEQ}
+{\bfseries GTEQ}
 , {\bfseries END\+\_\+\+COMPARE\+\_\+\+OPS}
 , {\bfseries NUM\+\_\+\+TOKENTYPES}
  \}
@@ -133,6 +137,9 @@ Definition at line \mbox{\hyperlink{tokenizer_8cpp_source_l00041}{41}} of file \
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ELSE"{}},\ ELSE\},}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}THEN"{}},\ THEN\},}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDIF"{}},\ ENDIF\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}FOR"{}},\ FOR\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDFOR"{}},\ ENDFOR\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}TO"{}},\ TO\},}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}WHILE"{}},\ WHILE\},}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDWHILE"{}},\ ENDWHILE\},}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}EOF"{}},\ \_EOF\},}
@@ -141,5 +148,5 @@ Definition at line \mbox{\hyperlink{tokenizer_8cpp_source_l00041}{41}} of file \
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{tokenizer_8h_source_l00051}{51}} of file \mbox{\hyperlink{tokenizer_8h_source}{tokenizer.\+h}}.
+Definition at line \mbox{\hyperlink{tokenizer_8h_source_l00054}{54}} of file \mbox{\hyperlink{tokenizer_8h_source}{tokenizer.\+h}}.
 

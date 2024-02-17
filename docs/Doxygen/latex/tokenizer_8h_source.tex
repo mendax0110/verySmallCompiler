@@ -30,54 +30,60 @@
 \DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ ELSE,}
 \DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ THEN,}
 \DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ ENDIF,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ WHILE,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ ENDWHILE,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ END\_KEYWORDS,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ START\_OPERATORS,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ EQ,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ PLUS,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ MINUS,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ ASTERISK,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ SLASH,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ END\_OPERATORS,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ START\_COMPARE\_OPS,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ EQEQ,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ NOTEQ,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ LT,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ LTEQ,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ GT,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ GTEQ,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ END\_COMPARE\_OPS,}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ NUM\_TOKENTYPES}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00049}00049\ \ \ \ \ \}\ TokenType;}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ TokenType>\ keywords\ =\ \{\{\textcolor{stringliteral}{"{}PRINT"{}},\ PRINT\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}INPUT"{}},INPUT\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}LET"{}},\ LET\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}IF"{}},\ IF\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}PASS"{}},\ PASS\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ELSE"{}},\ ELSE\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}THEN"{}},\ THEN\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDIF"{}},\ ENDIF\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}WHILE"{}},\ WHILE\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDWHILE"{}},\ ENDWHILE\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}EOF"{}},\ \_EOF\},}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}NEWLINE"{}},\ NEWLINE\}\};}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00063}00063\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacetoken_internals_a85badbd1224be4a078c5516351e55cc6}{convertString}}(TokenType\ t);}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00064}00064\ \ \ \ \ TokenType\ isKeyword(\textcolor{keyword}{const}\ std::string\ \&text);}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00067}\mbox{\hyperlink{classtoken_internals_1_1_token}{00067}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00068}00068\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token_aa3c5868ba4115f3189df6b2ac5b36f39}{Token}}();}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token_a3d7d59eaac1535df1433357d5d372f84}{\string~Token}}();}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token_aa3c5868ba4115f3189df6b2ac5b36f39}{Token}}(TokenType\ t,\ std::string\ v=\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtoken_internals_1_1_token_a51441dae18d08267f7105da43f50eebc}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}\&\ rhs);}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ std::string\ value;}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ TokenType\ type;}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00076}00076\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00077}00077\ \}}
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00079}00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOKENIZER\_H}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ FOR,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ ENDFOR,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ TO,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ WHILE,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ ENDWHILE,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ END\_KEYWORDS,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ START\_OPERATORS,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ EQ,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ PLUS,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ MINUS,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ ASTERISK,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ SLASH,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ END\_OPERATORS,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ START\_COMPARE\_OPS,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ EQEQ,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ NOTEQ,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ LT,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ LTEQ,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ GT,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ GTEQ,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ END\_COMPARE\_OPS,}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ NUM\_TOKENTYPES}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00052}00052\ \ \ \ \ \}\ TokenType;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ TokenType>\ keywords\ =\ \{\{\textcolor{stringliteral}{"{}PRINT"{}},\ PRINT\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}INPUT"{}},INPUT\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}LET"{}},\ LET\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}IF"{}},\ IF\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}PASS"{}},\ PASS\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ELSE"{}},\ ELSE\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}THEN"{}},\ THEN\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDIF"{}},\ ENDIF\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}FOR"{}},\ FOR\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDFOR"{}},\ ENDFOR\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}TO"{}},\ TO\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}WHILE"{}},\ WHILE\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}ENDWHILE"{}},\ ENDWHILE\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}EOF"{}},\ \_EOF\},}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}NEWLINE"{}},\ NEWLINE\}\};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00069}00069\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacetoken_internals_a85badbd1224be4a078c5516351e55cc6}{convertString}}(TokenType\ t);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00070}00070\ \ \ \ \ TokenType\ isKeyword(\textcolor{keyword}{const}\ std::string\ \&text);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00073}\mbox{\hyperlink{classtoken_internals_1_1_token}{00073}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token_aa3c5868ba4115f3189df6b2ac5b36f39}{Token}}();}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token_a3d7d59eaac1535df1433357d5d372f84}{\string~Token}}();}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token_aa3c5868ba4115f3189df6b2ac5b36f39}{Token}}(TokenType\ t,\ std::string\ v=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtoken_internals_1_1_token_a51441dae18d08267f7105da43f50eebc}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ std::string\ value;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ TokenType\ type;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00082}00082\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8h_source_l00085}00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOKENIZER\_H}}
 
 \end{DoxyCode}

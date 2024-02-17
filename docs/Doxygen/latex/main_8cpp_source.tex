@@ -51,21 +51,27 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ fs::path\ outputFilePath\ =\ outputFileName;}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ parser.end(outputFilePath.string());}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \textcolor{keywordtype}{int}\ main()\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ inputDirectory\ =\ \textcolor{stringliteral}{"{}../inputLang/"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ run\ pylinter\ on\ the\ output\ files}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{string}\ command\ =\ \textcolor{stringliteral}{"{}autopep8\ -\/-\/in-\/place\ -\/-\/aggressive\ -\/-\/aggressive\ "{}}\ +\ outputFileName;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{string}\ command2\ =\ \textcolor{stringliteral}{"{}pylint\ "{}}\ +\ outputFileName;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ system(command.c\_str());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ system(command2.c\_str());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ fs::directory\_iterator(inputDirectory))}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file())}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ processFile(entry.path());}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \textcolor{keywordtype}{int}\ main()\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ inputDirectory\ =\ \textcolor{stringliteral}{"{}../inputLang/"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ fs::directory\_iterator(inputDirectory))}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file())}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ processFile(entry.path());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \}}
 
 \end{DoxyCode}

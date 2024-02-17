@@ -23,8 +23,8 @@
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classparser_internals_1_1_parser}{Parser}}(\textcolor{keyword}{const}\ std::string\&\ source);}
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classparser_internals_1_1_parser_a3e658b5917a93a3ef648050d060e3a93}{\string~Parser}}();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classparser_internals_1_1_parser_a89ffe816b26a395479f83a5672b01d42}{checkToken}}(TokenType\ t);}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classparser_internals_1_1_parser_ac39166f4565ec0bf15b68739a4cf43c4}{checkPeek}}(TokenType\ t);}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classparser_internals_1_1_parser_ae36f93478783de377c22d9bed17e3c94}{checkToken}}(TokenType\ t)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classparser_internals_1_1_parser_a701ca5200f6b4ecd6e1ed01164d3bfd8}{checkPeek}}(TokenType\ t)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classparser_internals_1_1_parser_acad4b84eb3bcffba31d8b4a402ad2840}{match}}(TokenType\ t);}
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_a324a5bb61c9dfc645300a92aecd6fe69}{nextToken}}();}
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_a895df5cc93840b7fcb76ee950387278e}{emitIndentation}}();}
@@ -36,29 +36,30 @@
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_acc69338b11fed4936ad9229f788de311}{isInput}}();}
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_aa36a811aae28f8def6e68a6214da1bdd}{isLet}}();}
 \DoxyCodeLine{\Hypertarget{parser_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_a51a54b9b0489f5959c6dcc8d22337194}{isWhile}}();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_abf3714dafd368a2145aa5cb25c79fd61}{isIf}}();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_a8f67cab10702642b0484e7502f69b6b6}{isPrint}}();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}\ currentToken;}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}\ peekToken;}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indent\_count;}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ std::shared\_ptr<Lexer>\ \_lexer;}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ std::shared\_ptr<Emitter>\ \_emitter;}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isCompareOps();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ statement();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ expression();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ newLine();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ comparison();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ term();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ unary();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ primary();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ endOfFile();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ debug();}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00057}00057\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00058}00058\ \}}
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{parser_8h_source_l00060}00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARSER\_H}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_aae4246c050e6f789410c15e2175f4a32}{isFor}}();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_abf3714dafd368a2145aa5cb25c79fd61}{isIf}}();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classparser_internals_1_1_parser_a8f67cab10702642b0484e7502f69b6b6}{isPrint}}();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}\ currentToken;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtoken_internals_1_1_token}{Token}}\ peekToken;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indent\_count;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ std::shared\_ptr<Lexer>\ \_lexer;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ std::shared\_ptr<Emitter>\ \_emitter;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isCompareOps()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ statement();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ expression();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ newLine();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ comparison();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ term();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ unary();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ primary();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ endOfFile();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ debug()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00058}00058\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00061}00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARSER\_H}}
 
 \end{DoxyCode}

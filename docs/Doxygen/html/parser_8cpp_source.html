@@ -112,15 +112,15 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">   33</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">Parser::checkToken</a>(TokenType t)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">   33</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">Parser::checkToken</a>(TokenType t)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> (currentToken.type == t);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#ac39166f4565ec0bf15b68739a4cf43c4">   41</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#ac39166f4565ec0bf15b68739a4cf43c4">Parser::checkPeek</a>(TokenType t)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a701ca5200f6b4ecd6e1ed01164d3bfd8">   41</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a701ca5200f6b4ecd6e1ed01164d3bfd8">Parser::checkPeek</a>(TokenType t)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> (peekToken.type == t);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 </div>
@@ -136,7 +136,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">   57</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">Parser::match</a>(TokenType t)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(t))</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(t))</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#ac7726afb83b63228ec26b3b6910d07ff">abort</a>(<span class="stringliteral">&quot;Expected &quot;</span> + <a class="code hl_function" href="namespacetoken_internals.html#a85badbd1224be4a078c5516351e55cc6">tokenInternals::convertString</a>(t) + <span class="stringliteral">&quot; but found &quot;</span> + currentToken.value);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -167,7 +167,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#af213985eb12738d0dbf7d505a8795ea2">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#af213985eb12738d0dbf7d505a8795ea2">Parser::program</a>()</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    cout &lt;&lt; <span class="stringliteral">&quot;program\n&quot;</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(_EOF))</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(_EOF))</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        statement();</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        debug();</div>
@@ -204,287 +204,321 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">case</span> WHILE:</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#a51a54b9b0489f5959c6dcc8d22337194">isWhile</a>();</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">case</span> LET:</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">isLet</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">case</span> FOR:</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#aae4246c050e6f789410c15e2175f4a32">isFor</a>();</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">case</span> INPUT:</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">isInput</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">case</span> LET:</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">isLet</a>();</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">case</span> PASS:</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">isPass</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">case</span> INPUT:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">isInput</a>();</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">case</span> NEWLINE:</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            newLine();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">case</span> PASS:</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">isPass</a>();</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">case</span> _EOF:</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            endOfFile();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">case</span> NEWLINE:</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            newLine();</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordflow">throw</span> runtime_error(errorMessage);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">case</span> _EOF:</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            endOfFile();</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    cout &lt;&lt; <span class="stringliteral">&quot;Exit statement\n&quot;</span>;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">throw</span> runtime_error(errorMessage);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">  148</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">Parser::isPass</a>()</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>{</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    cout &lt;&lt; <span class="stringliteral">&quot;PASS\n&quot;</span>;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;pass\n&quot;</span>);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    newLine();</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    cout &lt;&lt; <span class="stringliteral">&quot;Exit statement\n&quot;</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">  151</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">Parser::isPass</a>()</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>{</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    cout &lt;&lt; <span class="stringliteral">&quot;PASS\n&quot;</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;pass\n&quot;</span>);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    newLine();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
 </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">  158</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">Parser::isInput</a>()</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>{</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    cout &lt;&lt; <span class="stringliteral">&quot;INPUT\n&quot;</span>;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ID);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    _emitter-&gt;emit(currentToken.value + <span class="stringliteral">&quot; = int(input())\n&quot;</span>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">  161</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">Parser::isInput</a>()</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    cout &lt;&lt; <span class="stringliteral">&quot;INPUT\n&quot;</span>;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    newLine();</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>}</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ID);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    _emitter-&gt;emit(currentToken.value + <span class="stringliteral">&quot; = int(input())\n&quot;</span>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    newLine();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}</div>
 </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">  170</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">Parser::isLet</a>()</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>{</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    cout &lt;&lt; <span class="stringliteral">&quot;LET\n&quot;</span>;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ID);</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    _emitter-&gt;emit(currentToken.value);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="}">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">  173</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">Parser::isLet</a>()</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>{</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    cout &lt;&lt; <span class="stringliteral">&quot;LET\n&quot;</span>;</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(EQ);</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    _emitter-&gt;emit(<span class="stringliteral">&quot; = &quot;</span>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ID);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    _emitter-&gt;emit(currentToken.value);</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    expression();</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(EQ);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    _emitter-&gt;emit(<span class="stringliteral">&quot; = &quot;</span>);</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    newLine();</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>}</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    expression();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    newLine();</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
 </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a51a54b9b0489f5959c6dcc8d22337194">  188</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a51a54b9b0489f5959c6dcc8d22337194">Parser::isWhile</a>()</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>{</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;while &quot;</span>);</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    indent_count++;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    comparison();</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;:\n&quot;</span>);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    newLine();</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(ENDWHILE))</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    {</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        statement();</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ENDWHILE);</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    indent_count--;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    newLine();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit isWhile\n&quot;</span>;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="}">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a51a54b9b0489f5959c6dcc8d22337194">  191</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a51a54b9b0489f5959c6dcc8d22337194">Parser::isWhile</a>()</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>{</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;while &quot;</span>);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    indent_count++;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    comparison();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;:\n&quot;</span>);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    newLine();</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ENDWHILE))</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        statement();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ENDWHILE);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    indent_count--;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    newLine();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit isWhile\n&quot;</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
 </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#abf3714dafd368a2145aa5cb25c79fd61">  210</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#abf3714dafd368a2145aa5cb25c79fd61">Parser::isIf</a>()</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>{</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    cout &lt;&lt; <span class="stringliteral">&quot;IF\n&quot;</span>;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;if &quot;</span>);</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    indent_count++;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    comparison();</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;:\n&quot;</span>);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    newLine();</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(ELSE) &amp;&amp; !<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(ENDIF))</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    {</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        statement();</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(ELSE))</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        cout &lt;&lt; <span class="stringliteral">&quot;ELSE\n&quot;</span>;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        _emitter-&gt;emit(<span class="stringliteral">&quot;else:\n&quot;</span>);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        newLine();</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(ENDIF))</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            statement();</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ENDIF);</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    indent_count--;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ENDIF);</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    newLine();</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit IF\n&quot;</span>;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>}</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="foldopen" id="foldopen00214" data-start="{" data-end="}">
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#aae4246c050e6f789410c15e2175f4a32">  214</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#aae4246c050e6f789410c15e2175f4a32">Parser::isFor</a>()</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>{</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    cout &lt;&lt; <span class="stringliteral">&quot;FOR\n&quot;</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    _emitter -&gt; emit(<span class="stringliteral">&quot;for &quot;</span>);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    indent_count++;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ID);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    _emitter-&gt;emit(currentToken.value);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(EQ);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    comparison();</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(TO);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    _emitter-&gt;emit(<span class="stringliteral">&quot; in &quot;</span>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;range(&quot;</span> + currentToken.value + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;:\n&quot;</span>);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    newLine();</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">while</span>(!<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ENDFOR))</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        statement();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ENDFOR);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    indent_count--;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    newLine();</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit FOR\n&quot;</span>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>}</div>
 </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a8f67cab10702642b0484e7502f69b6b6">  245</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a8f67cab10702642b0484e7502f69b6b6">Parser::isPrint</a>()</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>{</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    cout &lt;&lt; <span class="stringliteral">&quot;PRINT\n&quot;</span>;</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(STRING) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(NUMBER) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(ID))</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    {</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keywordflow">if</span> (currentToken.type == STRING)</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        {</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            _emitter-&gt;emit(<span class="stringliteral">&quot;print(\&quot;&quot;</span> + currentToken.value + <span class="stringliteral">&quot;\&quot;)\n&quot;</span>);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        }</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (currentToken.type == NUMBER || currentToken.type == ID)</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            _emitter-&gt;emit(<span class="stringliteral">&quot;print(&quot;</span> + currentToken.value + <span class="stringliteral">&quot;)\n&quot;</span>);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        }</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    }</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    {</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        statement();</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    }</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    newLine();</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit PRINT\n&quot;</span>;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>}</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#abf3714dafd368a2145aa5cb25c79fd61">  248</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#abf3714dafd368a2145aa5cb25c79fd61">Parser::isIf</a>()</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>{</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    cout &lt;&lt; <span class="stringliteral">&quot;IF\n&quot;</span>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;if &quot;</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    indent_count++;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    comparison();</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;:\n&quot;</span>);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    newLine();</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ELSE) &amp;&amp; !<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ENDIF))</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        statement();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ELSE))</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        cout &lt;&lt; <span class="stringliteral">&quot;ELSE\n&quot;</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        _emitter-&gt;emit(<span class="stringliteral">&quot;else:\n&quot;</span>);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        newLine();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">while</span> (!<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ENDIF))</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            statement();</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    }</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ENDIF);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    indent_count--;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(ENDIF);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    newLine();</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit IF\n&quot;</span>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
 </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keywordtype">bool</span> Parser::isCompareOps()</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>{</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">return</span> (peekToken.type &gt; START_COMPARE_OPS &amp;&amp; peekToken.type &lt; END_COMPARE_OPS);</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>}</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="keywordtype">void</span> Parser::comparison()</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>{</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    cout &lt;&lt; <span class="stringliteral">&quot;comparison\n&quot;</span>;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    expression();</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordflow">if</span> (isCompareOps())</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        _emitter-&gt;emit(<span class="stringliteral">&quot; &quot;</span> + currentToken.value + <span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        expression();</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    }</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">while</span> (isCompareOps())</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    {</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        _emitter-&gt;emit(<span class="stringliteral">&quot; &quot;</span> + currentToken.value + <span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        expression();</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        _emitter-&gt;emit(currentToken.value);</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    }</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit comparison\n&quot;</span>;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>}</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keywordtype">void</span> Parser::expression()</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>{</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    cout &lt;&lt; <span class="stringliteral">&quot;expression\n&quot;</span>;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    term();</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ac39166f4565ec0bf15b68739a4cf43c4">checkPeek</a>(MINUS) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#ac39166f4565ec0bf15b68739a4cf43c4">checkPeek</a>(PLUS))</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    {</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        _emitter-&gt;emit(<span class="stringliteral">&quot; &quot;</span> + currentToken.value + <span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        term();</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    }</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit expression\n&quot;</span>;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="foldopen" id="foldopen00283" data-start="{" data-end="}">
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="classparser_internals_1_1_parser.html#a8f67cab10702642b0484e7502f69b6b6">  283</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classparser_internals_1_1_parser.html#a8f67cab10702642b0484e7502f69b6b6">Parser::isPrint</a>()</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>{</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    cout &lt;&lt; <span class="stringliteral">&quot;PRINT\n&quot;</span>;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(STRING) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(NUMBER) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ID))</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">emitIndentation</a>();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keywordflow">if</span> (currentToken.type == STRING)</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            _emitter-&gt;emit(<span class="stringliteral">&quot;print(\&quot;&quot;</span> + currentToken.value + <span class="stringliteral">&quot;\&quot;)\n&quot;</span>);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (currentToken.type == NUMBER || currentToken.type == ID)</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            _emitter-&gt;emit(<span class="stringliteral">&quot;print(&quot;</span> + currentToken.value + <span class="stringliteral">&quot;)\n&quot;</span>);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        statement();</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    }</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    newLine();</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit PRINT\n&quot;</span>;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>}</div>
+</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="keywordtype">bool</span> Parser::isCompareOps()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordflow">return</span> (peekToken.type &gt; START_COMPARE_OPS &amp;&amp; peekToken.type &lt; END_COMPARE_OPS);</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>}</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="keywordtype">void</span> Parser::term()</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="keywordtype">void</span> Parser::comparison()</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>{</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    cout &lt;&lt; <span class="stringliteral">&quot;term\n&quot;</span>;</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    unary();</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ac39166f4565ec0bf15b68739a4cf43c4">checkPeek</a>(ASTERISK) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#ac39166f4565ec0bf15b68739a4cf43c4">checkPeek</a>(SLASH))</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    cout &lt;&lt; <span class="stringliteral">&quot;comparison\n&quot;</span>;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    expression();</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keywordflow">if</span> (isCompareOps())</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    {</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        _emitter-&gt;emit(<span class="stringliteral">&quot; &quot;</span> + currentToken.value + <span class="stringliteral">&quot; &quot;</span>);</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        unary();</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        expression();</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    }</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit term\n&quot;</span>;</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>}</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="keywordtype">void</span> Parser::unary()</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>{</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    cout &lt;&lt; <span class="stringliteral">&quot;unary\n&quot;</span>;</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(PLUS) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(MINUS))</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    {</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        _emitter-&gt;emit(currentToken.value);</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    }</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    primary();</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>}</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="keywordtype">void</span> Parser::primary()</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>{</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    cout &lt;&lt; <span class="stringliteral">&quot;primary &quot;</span>;</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(NUMBER) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(ID))</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    {</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        cout &lt;&lt; currentToken.value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        _emitter-&gt;emit(currentToken.value);</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    }</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit primary\n&quot;</span>;</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>}</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="keywordtype">void</span> Parser::newLine()</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>{</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    cout &lt;&lt; <span class="stringliteral">&quot;newLine\n&quot;</span>;</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    cout &lt;&lt; <span class="stringliteral">&quot;Current token before matching NEWLINE: &quot;</span> &lt;&lt; currentToken.value &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; currentToken.type &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(NEWLINE))</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    {</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(NEWLINE);</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        <span class="keywordflow">while</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">checkToken</a>(NEWLINE))</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        {</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>            _emitter-&gt;emit(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        }</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    }</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    {</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        <span class="comment">//match(currentToken.type);</span></div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        <span class="comment">//nextToken();</span></div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    }</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>}</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="keywordtype">void</span> Parser::endOfFile()</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>{</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    cout &lt;&lt; <span class="stringliteral">&quot;endOfFile\n&quot;</span>;</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(_EOF);</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit endOfFile\n&quot;</span>;</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>}</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="keywordtype">void</span> Parser::debug()</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>{</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    cout &lt;&lt; <span class="stringliteral">&quot;Current token: &quot;</span> &lt;&lt; currentToken.value &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; currentToken.type &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    cout &lt;&lt; <span class="stringliteral">&quot;Peek token: &quot;</span> &lt;&lt; peekToken.value &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; peekToken.type &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>}</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keywordflow">while</span> (isCompareOps())</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        _emitter-&gt;emit(<span class="stringliteral">&quot; &quot;</span> + currentToken.value + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        expression();</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        _emitter-&gt;emit(currentToken.value);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit comparison\n&quot;</span>;</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>}</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="keywordtype">void</span> Parser::expression()</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>{</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    cout &lt;&lt; <span class="stringliteral">&quot;expression\n&quot;</span>;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    term();</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a701ca5200f6b4ecd6e1ed01164d3bfd8">checkPeek</a>(MINUS) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#a701ca5200f6b4ecd6e1ed01164d3bfd8">checkPeek</a>(PLUS))</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    {</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        _emitter-&gt;emit(<span class="stringliteral">&quot; &quot;</span> + currentToken.value + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        term();</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    }</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit expression\n&quot;</span>;</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>}</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="keywordtype">void</span> Parser::term()</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>{</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    cout &lt;&lt; <span class="stringliteral">&quot;term\n&quot;</span>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    unary();</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#a701ca5200f6b4ecd6e1ed01164d3bfd8">checkPeek</a>(ASTERISK) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#a701ca5200f6b4ecd6e1ed01164d3bfd8">checkPeek</a>(SLASH))</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        _emitter-&gt;emit(<span class="stringliteral">&quot; &quot;</span> + currentToken.value + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        unary();</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    }</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit term\n&quot;</span>;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>}</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="keywordtype">void</span> Parser::unary()</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>{</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    cout &lt;&lt; <span class="stringliteral">&quot;unary\n&quot;</span>;</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(PLUS) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(MINUS))</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    {</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        _emitter-&gt;emit(currentToken.value);</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    }</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    primary();</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>}</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="keywordtype">void</span> Parser::primary()</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>{</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    cout &lt;&lt; <span class="stringliteral">&quot;primary &quot;</span>;</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(NUMBER) || <a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(ID))</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    {</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        cout &lt;&lt; currentToken.value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        _emitter-&gt;emit(currentToken.value);</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    }</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit primary\n&quot;</span>;</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>}</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span><span class="keywordtype">void</span> Parser::newLine()</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>{</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>    cout &lt;&lt; <span class="stringliteral">&quot;newLine\n&quot;</span>;</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    cout &lt;&lt; <span class="stringliteral">&quot;Current token before matching NEWLINE: &quot;</span> &lt;&lt; currentToken.value &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; currentToken.type &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(NEWLINE))</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>    {</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>        <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(NEWLINE);</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        <span class="keywordflow">while</span> (<a class="code hl_function" href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">checkToken</a>(NEWLINE))</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        {</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            _emitter-&gt;emit(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>            <a class="code hl_function" href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">nextToken</a>();</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        }</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    }</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>}</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><span class="keywordtype">void</span> Parser::endOfFile()</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>{</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    cout &lt;&lt; <span class="stringliteral">&quot;endOfFile\n&quot;</span>;</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    <a class="code hl_function" href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">match</a>(_EOF);</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>    _emitter-&gt;emit(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    cout &lt;&lt; <span class="stringliteral">&quot;exit endOfFile\n&quot;</span>;</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>}</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="keywordtype">void</span> Parser::debug()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    cout &lt;&lt; <span class="stringliteral">&quot;Current token: &quot;</span> &lt;&lt; currentToken.value &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; currentToken.type &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    cout &lt;&lt; <span class="stringliteral">&quot;Peek token: &quot;</span> &lt;&lt; peekToken.value &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; peekToken.type &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>}</div>
 <div class="ttc" id="aclassemitter_internals_1_1_emitter_html"><div class="ttname"><a href="classemitter_internals_1_1_emitter.html">emitterInternals::Emitter</a></div><div class="ttdoc">Class for the emitter.</div><div class="ttdef"><b>Definition</b> <a href="emitter_8h_source.html#l00012">emitter.h:13</a></div></div>
 <div class="ttc" id="aclasslexer_internals_1_1_lexer_html"><div class="ttname"><a href="classlexer_internals_1_1_lexer.html">lexerInternals::Lexer</a></div><div class="ttdoc">Class for the lexer.</div><div class="ttdef"><b>Definition</b> <a href="lexer_8h_source.html#l00017">lexer.h:18</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_a0a0a104489ac2aa6647a1cf9b38d1f62"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">parserInternals::Parser::isPass</a></div><div class="ttdeci">void isPass()</div><div class="ttdoc">This is the function to parse the pass statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00148">parser.cpp:148</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_a0a0a104489ac2aa6647a1cf9b38d1f62"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a0a0a104489ac2aa6647a1cf9b38d1f62">parserInternals::Parser::isPass</a></div><div class="ttdeci">void isPass()</div><div class="ttdoc">This is the function to parse the pass statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00151">parser.cpp:151</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_a324a5bb61c9dfc645300a92aecd6fe69"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a324a5bb61c9dfc645300a92aecd6fe69">parserInternals::Parser::nextToken</a></div><div class="ttdeci">void nextToken()</div><div class="ttdoc">This is the function to get the next token.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00068">parser.cpp:68</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_a3e658b5917a93a3ef648050d060e3a93"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a3e658b5917a93a3ef648050d060e3a93">parserInternals::Parser::~Parser</a></div><div class="ttdeci">~Parser()</div><div class="ttdoc">This is the destructor of the Parser class.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00023">parser.cpp:23</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_a51a54b9b0489f5959c6dcc8d22337194"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a51a54b9b0489f5959c6dcc8d22337194">parserInternals::Parser::isWhile</a></div><div class="ttdeci">void isWhile()</div><div class="ttdoc">This is the function to parse the while statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00188">parser.cpp:188</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_a51a54b9b0489f5959c6dcc8d22337194"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a51a54b9b0489f5959c6dcc8d22337194">parserInternals::Parser::isWhile</a></div><div class="ttdeci">void isWhile()</div><div class="ttdoc">This is the function to parse the while statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00191">parser.cpp:191</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_a701ca5200f6b4ecd6e1ed01164d3bfd8"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a701ca5200f6b4ecd6e1ed01164d3bfd8">parserInternals::Parser::checkPeek</a></div><div class="ttdeci">bool checkPeek(TokenType t) const</div><div class="ttdoc">This is the function to peek the next token.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00041">parser.cpp:41</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_a7345c03170fb51f2f4442abbf6901d58"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a7345c03170fb51f2f4442abbf6901d58">parserInternals::Parser::Parser</a></div><div class="ttdeci">Parser(const std::string &amp;source)</div><div class="ttdoc">This is the constructor of the Parser class.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00015">parser.cpp:15</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_a895df5cc93840b7fcb76ee950387278e"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a895df5cc93840b7fcb76ee950387278e">parserInternals::Parser::emitIndentation</a></div><div class="ttdeci">void emitIndentation()</div><div class="ttdoc">This is the function to emit the indentation.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00075">parser.cpp:75</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_a89ffe816b26a395479f83a5672b01d42"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a89ffe816b26a395479f83a5672b01d42">parserInternals::Parser::checkToken</a></div><div class="ttdeci">bool checkToken(TokenType t)</div><div class="ttdoc">This is the function to check the current token.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00033">parser.cpp:33</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_a8f67cab10702642b0484e7502f69b6b6"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a8f67cab10702642b0484e7502f69b6b6">parserInternals::Parser::isPrint</a></div><div class="ttdeci">void isPrint()</div><div class="ttdoc">This is the function to parse the print statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00245">parser.cpp:245</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_aa36a811aae28f8def6e68a6214da1bdd"><div class="ttname"><a href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">parserInternals::Parser::isLet</a></div><div class="ttdeci">void isLet()</div><div class="ttdoc">This is the function to parse the let statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00170">parser.cpp:170</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_a8f67cab10702642b0484e7502f69b6b6"><div class="ttname"><a href="classparser_internals_1_1_parser.html#a8f67cab10702642b0484e7502f69b6b6">parserInternals::Parser::isPrint</a></div><div class="ttdeci">void isPrint()</div><div class="ttdoc">This is the function to parse the print statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00283">parser.cpp:283</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_aa36a811aae28f8def6e68a6214da1bdd"><div class="ttname"><a href="classparser_internals_1_1_parser.html#aa36a811aae28f8def6e68a6214da1bdd">parserInternals::Parser::isLet</a></div><div class="ttdeci">void isLet()</div><div class="ttdoc">This is the function to parse the let statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00173">parser.cpp:173</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_aad26484c0a5e42cbc6bab21db73bd403"><div class="ttname"><a href="classparser_internals_1_1_parser.html#aad26484c0a5e42cbc6bab21db73bd403">parserInternals::Parser::end</a></div><div class="ttdeci">void end(const std::string &amp;output)</div><div class="ttdoc">This is the function to end the parser, write emitter to file.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00099">parser.cpp:99</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_abf3714dafd368a2145aa5cb25c79fd61"><div class="ttname"><a href="classparser_internals_1_1_parser.html#abf3714dafd368a2145aa5cb25c79fd61">parserInternals::Parser::isIf</a></div><div class="ttdeci">void isIf()</div><div class="ttdoc">This is the function to parse the if statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00210">parser.cpp:210</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_ac39166f4565ec0bf15b68739a4cf43c4"><div class="ttname"><a href="classparser_internals_1_1_parser.html#ac39166f4565ec0bf15b68739a4cf43c4">parserInternals::Parser::checkPeek</a></div><div class="ttdeci">bool checkPeek(TokenType t)</div><div class="ttdoc">This is the function to peek the next token.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00041">parser.cpp:41</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_aae4246c050e6f789410c15e2175f4a32"><div class="ttname"><a href="classparser_internals_1_1_parser.html#aae4246c050e6f789410c15e2175f4a32">parserInternals::Parser::isFor</a></div><div class="ttdeci">void isFor()</div><div class="ttdoc">This is the function to parse the for statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00214">parser.cpp:214</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_abf3714dafd368a2145aa5cb25c79fd61"><div class="ttname"><a href="classparser_internals_1_1_parser.html#abf3714dafd368a2145aa5cb25c79fd61">parserInternals::Parser::isIf</a></div><div class="ttdeci">void isIf()</div><div class="ttdoc">This is the function to parse the if statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00248">parser.cpp:248</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_ac7726afb83b63228ec26b3b6910d07ff"><div class="ttname"><a href="classparser_internals_1_1_parser.html#ac7726afb83b63228ec26b3b6910d07ff">parserInternals::Parser::abort</a></div><div class="ttdeci">void abort(const std::string &amp;message)</div><div class="ttdoc">This is the function to abort the parser.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00048">parser.cpp:48</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_acad4b84eb3bcffba31d8b4a402ad2840"><div class="ttname"><a href="classparser_internals_1_1_parser.html#acad4b84eb3bcffba31d8b4a402ad2840">parserInternals::Parser::match</a></div><div class="ttdeci">bool match(TokenType t)</div><div class="ttdoc">This is the function, that looks for a match in the token.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00057">parser.cpp:57</a></div></div>
-<div class="ttc" id="aclassparser_internals_1_1_parser_html_acc69338b11fed4936ad9229f788de311"><div class="ttname"><a href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">parserInternals::Parser::isInput</a></div><div class="ttdeci">void isInput()</div><div class="ttdoc">This is the function to parse the input statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00158">parser.cpp:158</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_acc69338b11fed4936ad9229f788de311"><div class="ttname"><a href="classparser_internals_1_1_parser.html#acc69338b11fed4936ad9229f788de311">parserInternals::Parser::isInput</a></div><div class="ttdeci">void isInput()</div><div class="ttdoc">This is the function to parse the input statement.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00161">parser.cpp:161</a></div></div>
+<div class="ttc" id="aclassparser_internals_1_1_parser_html_ae36f93478783de377c22d9bed17e3c94"><div class="ttname"><a href="classparser_internals_1_1_parser.html#ae36f93478783de377c22d9bed17e3c94">parserInternals::Parser::checkToken</a></div><div class="ttdeci">bool checkToken(TokenType t) const</div><div class="ttdoc">This is the function to check the current token.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00033">parser.cpp:33</a></div></div>
 <div class="ttc" id="aclassparser_internals_1_1_parser_html_af213985eb12738d0dbf7d505a8795ea2"><div class="ttname"><a href="classparser_internals_1_1_parser.html#af213985eb12738d0dbf7d505a8795ea2">parserInternals::Parser::program</a></div><div class="ttdeci">void program()</div><div class="ttdoc">This is the function to parse the program.</div><div class="ttdef"><b>Definition</b> <a href="parser_8cpp_source.html#l00084">parser.cpp:84</a></div></div>
 <div class="ttc" id="anamespaceemitter_internals_html"><div class="ttname"><a href="namespaceemitter_internals.html">emitterInternals</a></div><div class="ttdoc">Namespace for the emitter internals.</div></div>
 <div class="ttc" id="anamespacelexer_internals_html"><div class="ttname"><a href="namespacelexer_internals.html">lexerInternals</a></div><div class="ttdoc">Namespace for the lexer internals.</div></div>
