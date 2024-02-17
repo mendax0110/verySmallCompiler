@@ -91,6 +91,15 @@ string tokenInternals::convertString(TokenType t)
     case ENDWHILE:
         text = "ENDWHILE";
         break;
+    case FOR:
+        text = "FOR";
+		break;
+    case ENDFOR:
+		text = "ENDFOR";
+        break;
+    case TO:
+        text = "TO";
+		break;
     case EQ:
         text = "=";
         break;

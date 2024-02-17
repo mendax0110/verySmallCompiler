@@ -34,6 +34,7 @@ namespace parserInternals
         void isInput();
         void isLet();
         void isWhile();
+        void isFor();
         void isIf();
         void isPrint();
 

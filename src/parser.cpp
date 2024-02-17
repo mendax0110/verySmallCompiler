@@ -121,6 +121,9 @@ void Parser::statement()
 		case WHILE:
 			isWhile();
 			break;
+        case FOR:
+            isFor();
+            break;
 		case LET:
 			isLet();
 			break;
@@ -205,6 +208,41 @@ void Parser::isWhile()
     newLine();
     cout << "exit isWhile\n";
 }
+
+
+/// @brief This is the function to parse the for statement
+void Parser::isFor()
+{
+    emitIndentation();
+    cout << "FOR\n";
+    _emitter -> emit("for ");
+    indent_count++;
+    nextToken();
+    match(ID);
+    _emitter->emit(currentToken.value);
+    nextToken();
+    match(EQ);
+    nextToken();
+    nextToken();
+    comparison();
+    match(TO);
+    _emitter->emit(" in ");
+    nextToken();
+    _emitter->emit("range(" + currentToken.value + ")");
+    _emitter->emit(":\n");
+    nextToken();
+    newLine();
+    while(!checkToken(ENDFOR))
+	{
+		statement();
+	}
+    match(ENDFOR);
+    indent_count--;
+    nextToken();
+    newLine();
+    cout << "exit FOR\n";
+}
+
 
 /// @brief This is the function to parse the if statement
 void Parser::isIf()
@@ -355,7 +393,6 @@ void Parser::primary()
 void Parser::newLine()
 {
     cout << "newLine\n";
-
     cout << "Current token before matching NEWLINE: " << currentToken.value << " (" << currentToken.type << ")\n";
 
     if (checkToken(NEWLINE))
@@ -366,11 +403,6 @@ void Parser::newLine()
             _emitter->emit("\n");
             nextToken();
         }
-    }
-    else
-    {
-        //match(currentToken.type);
-        //nextToken();
     }
 }
 

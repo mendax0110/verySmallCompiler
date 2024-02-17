@@ -49,6 +49,12 @@ void processFile(const fs::path& inputFilePath)
     fs::path outputFilePath = outputFileName;
 
     parser.end(outputFilePath.string());
+
+    // run pylinter on the output files
+    string command = "autopep8 --in-place --aggressive --aggressive " + outputFileName;
+    string command2 = "pylint " + outputFileName;
+    system(command.c_str());
+    system(command2.c_str());
 }
 
 /// @brief This is the main function for the compiler

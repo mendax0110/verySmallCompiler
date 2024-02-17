@@ -1,0 +1,10 @@
+PRINT "COMPLEX TRYOUT FORLOOP"
+INPUT nums
+PRINT " "
+
+LET a = 0
+LET b = 0
+FOR i = 1 TO nums
+    LET a = a + i
+    PRINT a
+ENDFOR

@@ -4,6 +4,16 @@ set(CMAKE_CXX_STANDARD 17)
 
 project(verySmallCompiler)
 
+execute_process(COMMAND pip show pylint
+    RESULT_VARIABLE PIP_PYLING
+    OUTPUT_QUIET
+)
+
+execute_process(COMMAND pip show autopep8
+    RESULT_VARIABLE PIP_AUTOPEP8
+    OUTPUT_QUIET
+)
+
 set(HEADER_FILES
     ./src/includes/emitter.h
     ./src/includes/lexer.h
