@@ -14,6 +14,10 @@ execute_process(COMMAND pip show autopep8
     OUTPUT_QUIET
 )
 
+if(NOT PIP_PYLING EQUAL 0 AND NOT PIP_AUTOPEP8 EQUAL 0)
+    execute_process(COMMAND pip install pylint autopep8)
+endif()
+
 set(HEADER_FILES
     ./src/includes/emitter.h
     ./src/includes/lexer.h
