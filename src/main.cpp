@@ -1,6 +1,7 @@
 #include "../src/includes/tokenizer.h" 
 #include "../src/includes/lexer.h"
 #include "../src/includes/parser.h"
+#include "../src/includes/linter.h"
 #include <iostream>
 #include <filesystem>
 #include <fstream>
@@ -10,6 +11,7 @@
 using namespace lexerInternals;
 using namespace tokenInternals;
 using namespace parserInternals;
+using namespace linterInternals;
 using namespace std;
 namespace fs = filesystem;
 
@@ -36,7 +38,8 @@ void processFile(const fs::path& inputFilePath)
 
     Lexer lexer(source);
     Token token = lexer.getToken();
-    while (!lexer.isEOF(token)) {
+    while (!lexer.isEOF(token))
+    {
         cout << token.value << "\n" << endl;
         token = lexer.getToken();
     }
@@ -50,11 +53,9 @@ void processFile(const fs::path& inputFilePath)
 
     parser.end(outputFilePath.string());
 
-    // run pylinter on the output files
-    string command = "autopep8 --in-place --aggressive --aggressive " + outputFileName;
-    string command2 = "pylint " + outputFileName;
-    system(command.c_str());
-    system(command2.c_str());
+    Linter linter;
+    linter.lint();
+    cout << "Linting completed\n";
 }
 
 /// @brief This is the main function for the compiler

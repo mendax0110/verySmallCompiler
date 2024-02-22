@@ -104,6 +104,7 @@
     "new": "cpp",
     "ranges": "cpp",
     "streambuf": "cpp",
-    "filesystem": "cpp"
+    "filesystem": "cpp",
+    "xstring": "cpp"
   }
 }

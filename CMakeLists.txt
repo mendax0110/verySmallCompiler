@@ -23,6 +23,7 @@ set(HEADER_FILES
     ./src/includes/lexer.h
     ./src/includes/parser.h
     ./src/includes/tokenizer.h
+    ./src/includes/linter.h
 )
 
 set(SOURCE_FILES
@@ -31,6 +32,7 @@ set(SOURCE_FILES
     ./src/main.cpp
     ./src/parser.cpp
     ./src/tokenizer.cpp
+    ./src/linter.cpp
 )
 
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
