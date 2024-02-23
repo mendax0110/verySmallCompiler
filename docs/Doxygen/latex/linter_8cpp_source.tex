@@ -1,0 +1,60 @@
+\doxysection{linter.\+cpp}
+\hypertarget{linter_8cpp_source}{}\label{linter_8cpp_source}\index{C:/Users/Adrian/Documents/git/verySmallCompiler/src/linter.cpp@{C:/Users/Adrian/Documents/git/verySmallCompiler/src/linter.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../src/includes/linter.h"{}}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00003}00003\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacelinter_internals}{linterInternals}};}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00004}00004\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00008}\mbox{\hyperlink{classlinter_internals_1_1_linter_aee089c1c5fd5d2f3ccff0d25da826aba}{00008}}\ \mbox{\hyperlink{classlinter_internals_1_1_linter_aee089c1c5fd5d2f3ccff0d25da826aba}{Linter::Linter}}()}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00010}00010\ \ \ \ \ code\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00014}\mbox{\hyperlink{classlinter_internals_1_1_linter_a4eb71e1ad2690add9217dd758800a778}{00014}}\ \mbox{\hyperlink{classlinter_internals_1_1_linter_a4eb71e1ad2690add9217dd758800a778}{Linter::\string~Linter}}()}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00016}00016\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00017}00017\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Linter\ object\ destroyed.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00018}00018\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00022}\mbox{\hyperlink{classlinter_internals_1_1_linter_a0bbef57920c5fa758237ce4d08d9821c}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlinter_internals_1_1_linter_a0bbef57920c5fa758237ce4d08d9821c}{Linter::lint}}()}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (!fs::exists(outputDirectory))}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Output\ directory\ does\ not\ exist"{}});}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ fs::directory\_iterator(outputDirectory))}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file())}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ fs::path\ filePath\ =\ entry.path();}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ ifstream\ file(filePath);}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (file.is\_open())}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ line\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Error\ opening\ file:\ "{}}\ +\ filePath.string());}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ autopep8Command\ =\ \textcolor{stringliteral}{"{}autopep8\ -\/-\/in-\/place\ -\/-\/aggressive\ -\/-\/aggressive\ "{}}\ +\ filePath.string();}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ pylintCommand\ =\ \textcolor{stringliteral}{"{}pylint\ "{}}\ +\ filePath.string();}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ system(autopep8Command.c\_str());}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ system(pylintCommand.c\_str());}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linter_8cpp_source_l00057}00057\ \}}
+
+\end{DoxyCode}
