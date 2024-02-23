@@ -33,7 +33,10 @@ void Lexer::nextChar()
 /// @return This will return the peek to the next character
 char Lexer::peek() const
 {
-    return (curPos + 1 >= sourceLen) ? '\0' : source[curPos + 1];
+    if (curPos == std::numeric_limits<decltype(curPos)>::max())
+        return '\0';
+    else
+        return (curPos + 1 >= sourceLen) ? '\0' : source[curPos + 1];
 }
 
 /// @brief This is the function that checks if the token is the end of file
