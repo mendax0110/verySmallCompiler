@@ -6,7 +6,7 @@ Very Small Compiler is a simple compiler written in C++ that translates Teeny Ti
 
 The compiler follows the steps outlined in the blog post to transform Teeny Tiny Code, a minimalistic language, into Python code. It includes a lexer, parser, and emitter, providing insights into lexical analysis, parsing, and code generation.
 
-## HowTo
+## How it works
 - **1: lexer:** Reads the source code and breaks it into tokens (smallest units of meaning like keywords and operators).
 
 - **2: tokenizer:** Converts raw input into tokens by following the language's rules.
